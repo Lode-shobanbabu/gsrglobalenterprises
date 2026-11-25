@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 80" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bronzeGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#dfc27e"/>
+      <stop offset="50%" stop-color="#cca75c"/>
+      <stop offset="100%" stop-color="#b89047"/>
+    </linearGradient>
+    <linearGradient id="crestBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e223f"/>
+      <stop offset="100%" stop-color="#060d18"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Crest Emblem Container -->
+  <g transform="translate(10, 10)">
+    <rect width="60" height="60" rx="14" fill="url(#crestBg)" stroke="url(#bronzeGold)" stroke-width="2.5"/>
+    
+    <!-- Stylized Geometric Crest G-S-R intersection -->
+    <path d="M38 18 C33 16, 22 17, 18 24 C14 31, 15 41, 23 44 C30 46, 36 43, 38 38 L28 38" 
+          fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Dynamic Gold Accents -->
+    <path d="M26 27 L42 27 C45 27, 45 33, 40 34 L32 35 C28 36, 28 42, 33 42 L44 42" 
+          fill="none" stroke="url(#bronzeGold)" stroke-width="2.5" stroke-linecap="round"/>
+          
+    <circle cx="43" cy="19" r="3.5" fill="url(#bronzeGold)"/>
+  </g>
+
+  <!-- Typography: GSR GLOBAL ENTERPRISES -->
+  <text x="86" y="42" font-family="'Outfit', 'Manrope', 'Segoe UI', sans-serif" font-size="25" font-weight="800" fill="#ffffff" letter-spacing="0.5">GSR GLOBAL</text>
+  <text x="88" y="59" font-family="'Plus Jakarta Sans', 'Inter', 'Segoe UI', sans-serif" font-size="11.5" font-weight="700" fill="url(#bronzeGold)" letter-spacing="4">ENTERPRISES</text>
+</svg>
