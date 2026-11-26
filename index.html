@@ -23,15 +23,16 @@
   <meta property="og:image"
     content="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80">
 
-  <!-- Favicon Monogram -->
-  <link rel="icon" type="image/svg+xml"
-    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%230b1b3d'/><path d='M28 68V32h24c8 0 14 5 14 13s-6 13-14 13H42v10H28zm14-20h10c3 0 5-2 5-5s-2-5-5-5H42v10z' fill='%23c5a059'/><circle cx='72' cy='68' r='6' fill='%23c5a059'/></svg>">
+  <!-- Official Brand Favicons (Cropped from Official Client Emblem) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="128x128" href="assets/images/favicon-128.png">
 
-  <!-- Google Fonts: Manrope & Inter -->
+  <!-- Google Fonts: Poppins (Headings: 600/700) & Roboto (Body: 300/400/500/700) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Roboto:wght@300;400;500;700&display=swap"
     rel="stylesheet">
 
   <!-- Bootstrap 5.3 CSS -->
@@ -48,76 +49,110 @@
 <body data-bs-spy="scroll" data-bs-target="#mainNavbar" data-bs-offset="90" tabindex="0">
 
   <!-- ==========================================================================
-       TOP CORPORATE UTILITY BAR (OFFICIAL CREDENTIALS & DIRECT CONTACT)
+       TOP CORPORATE UTILITY BAR (EXACT REFERENCE DESIGN)
        ========================================================================== -->
   <div class="top-utility-bar d-none d-lg-block">
     <div class="container">
       <div class="d-flex justify-content-between align-items-center">
-        <!-- Left: Verified GSTIN & Dual Corporate Headquarters -->
+        <!-- Direct Phone, Official Email & Location (Left Aligned) -->
         <div class="d-flex align-items-center gap-3">
-          <span class="top-gst-badge"><i class="bi bi-shield-check me-1"></i>GSTIN: 37ABDFG9557A1ZC</span>
-          <span class="topbar-sep">&bull;</span>
-          <span class="topbar-hq-text">Registered HQ: Vizianagaram &bull; Branch: Visakhapatnam, Andhra Pradesh</span>
-        </div>
-        <!-- Right: Direct Phone & Official Email Links -->
-        <div class="d-flex align-items-center gap-4">
-          <a href="tel:+917989635764">
-            <i class="bi bi-telephone-fill me-1"></i> +91 7989635764
+          <a href="tel:+917989635764" class="topbar-contact-item">
+            <i class="bi bi-telephone-fill"></i>
+            <span>+91 7989635764</span>
           </a>
-          <span class="topbar-sep">&bull;</span>
-          <a href="mailto:gsrglobalenterprises@gmail.com">
-            <i class="bi bi-envelope-fill me-1"></i> gsrglobalenterprises@gmail.com
+          <a href="mailto:gsrglobalenterprises@gmail.com" class="topbar-contact-item">
+            <i class="bi bi-envelope-fill"></i>
+            <span>gsrglobalenterprises@gmail.com</span>
+          </a>
+          <span class="topbar-v-pipe">|</span>
+          <span class="topbar-location-item">
+            <i class="bi bi-geo-alt-fill"></i>
+            <span>Visakhapatnam, India</span>
+          </span>
+        </div>
+
+        <!-- Social Media Badges (Right Aligned, White Circles with Navy Icons) -->
+        <div class="d-flex align-items-center gap-2">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="topbar-social-btn"
+            aria-label="LinkedIn">
+            <i class="bi bi-linkedin"></i>
+          </a>
+          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="topbar-social-btn"
+            aria-label="YouTube">
+            <i class="bi bi-youtube"></i>
+          </a>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="topbar-social-btn"
+            aria-label="Facebook">
+            <i class="bi bi-facebook"></i>
           </a>
         </div>
       </div>
     </div>
   </div>
 
+
   <!-- ==========================================================================
-       MAIN NAVIGATION BAR (OFFICIAL LOGO & NAVIGATION)
+       MAIN NAVIGATION BAR (EXACT REFERENCE ORDER & ORANGE CTA)
        ========================================================================== -->
   <header class="sticky-top">
     <nav class="navbar navbar-expand-lg navbar-corporate" id="mainNavbar" aria-label="Corporate Header">
       <div class="container">
 
-        <!-- Official Corporate Logo -->
+        <!-- Official Corporate Logo (Client Color Logo on Transparent Background) -->
         <a class="brand-container" href="#hero" aria-label="GSR GLOBAL ENTERPRISES">
-          <img src="assets/images/gsr-logo-white.webp" alt="GSR GLOBAL ENTERPRISES - Delivering Procurement Excellence Across Industries"
-            class="brand-logo-img">
+          <img src="assets/images/gsr-logo-official-transparent.webp"
+            alt="GSR GLOBAL ENTERPRISES - Multi-Sector Procurement & Supply Experts" class="brand-logo-img">
         </a>
 
-        <!-- Mobile Toggler -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
-          aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <!-- Mobile Toggler (Triggers Side Offcanvas) -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvas"
+          aria-controls="navbarOffcanvas" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- Nav Links -->
-        <div class="collapse navbar-collapse" id="navbarContent">
-          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" href="#hero">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#about">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#services">Our Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#clients">Our Clients</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact Us</a>
-            </li>
-          </ul>
-
-          <!-- CTA Dual-Pill Button (Matching Reference Design) -->
-          <div class="d-flex align-items-center mt-3 mt-lg-0">
-            <a href="#contact" class="header-cta-group" aria-label="Let's Talk">
-              <span class="header-cta-main">Let's Talk</span>
-              <span class="header-cta-icon" aria-hidden="true"><i class="bi bi-arrow-up-right"></i></span>
+        <!-- Side Offcanvas Navigation Drawer (Slides from Left with 'X' Close) -->
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="navbarOffcanvas"
+          aria-labelledby="navbarOffcanvasLabel">
+          <div class="offcanvas-header border-bottom">
+            <a class="brand-container me-0" href="#hero" aria-label="GSR GLOBAL ENTERPRISES">
+              <img src="assets/images/gsr-logo-official-transparent.webp"
+                alt="GSR GLOBAL ENTERPRISES - Multi-Sector Procurement & Supply Experts"
+                class="brand-logo-img offcanvas-logo-img">
             </a>
+            <button type="button" class="btn-close offcanvas-close-btn" data-bs-dismiss="offcanvas"
+              aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" href="#hero">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#services">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#Industries">Industries</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#clients">Clients</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact Us</a>
+              </li>
+            </ul>
+
+            <!-- CTA Button: Request a Quote (Orange Pill with Arrow) -->
+            <div class="d-flex align-items-center mt-3 mt-lg-0">
+              <a href="#contact" class="header-cta-orange" aria-label="Request a Quote">
+                <span>Request a Quote</span>
+                <i class="bi bi-arrow-right ms-1"></i>
+              </a>
+            </div>
           </div>
         </div>
 
@@ -127,507 +162,213 @@
 
   <main>
     <!-- ==========================================================================
-         A. HOME / HERO SECTION
-         ========================================================================== -->
-    <!-- ==========================================================================
-         A. HOME / HERO SECTION - SPLIT GRADIENT WITH SLIDERS & DOWN SCROLLING MARQUEE
+         A. HOME / HERO SECTION - EXACT USER DESIGN REFERENCE
          ========================================================================== -->
     <section class="hero-section" id="hero">
+      <div class="container hero-container">
+        <div class="row align-items-center">
+          <div class="col-lg-8 col-xl-7 hero-content-col">
 
-      <!-- 3-Slide Hero Slider Container -->
-      <div class="hero-slider" id="heroSlider">
-
-        <!-- Slide 1: Multi-Sector Procurement & Industrial Logistics -->
-        <div class="hero-slide active" data-slide="0" aria-hidden="false">
-          <div class="container hero-container">
-            <div class="row align-items-center">
-
-              <!-- Left Column: Typography, Badges, CTAs & Social Proof -->
-              <div class="col-lg-7 col-xl-6 hero-col-content">
-                <div class="hero-status-pill">
-                  <i class="bi bi-asterisk text-gold me-2"></i>
-                  <span class="hero-status-text">Multi-Sector Procurement &amp; Supply Experts</span>
-                </div>
-
-                <h1 class="hero-main-title">
-                  Delivering Procurement <br>
-                  <span class="hero-title-gradient">Excellence Across</span> <br>
-                  Global Industries.
-                </h1>
-
-                <p class="hero-lead-desc">
-                  Reliable sourcing, quality-driven procurement, and turnkey supply solutions for healthcare
-                  institutions, government agencies, transit workshops, and clean energy projects.
-                </p>
-
-                <div class="hero-action-row">
-                  <a href="#services" class="btn-hero-action">
-                    <span>Get Started</span>
-                    <span class="btn-hero-circle"><i class="bi bi-arrow-right"></i></span>
-                  </a>
-
-                  <!-- Client Trust & Social Proof Stack -->
-                  <div class="hero-trust-stack">
-                    <div class="avatar-group">
-                      <img src="assets/images/avatar-1.svg" alt="Client 1" class="avatar-img">
-                      <img src="assets/images/avatar-2.svg" alt="Client 2" class="avatar-img">
-                      <img src="assets/images/avatar-3.svg" alt="Client 3" class="avatar-img">
-                    </div>
-                    <div class="trust-text-block">
-                      <div class="trust-stars">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-half"></i>
-                        <span class="trust-rating">4.9</span>
-                      </div>
-                      <span class="trust-label">Our 100+ Enterprise Clients</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Right Column: 3D Transparent Sector Visual -->
-              <div class="col-lg-5 col-xl-6 hero-col-visual">
-                <div class="hero-stage-container">
-                  <div class="hero-ambient-glow"></div>
-                  <img src="assets/images/hero-transparent-procurement.webp"
-                    alt="Heavy Commercial Transit Fleet Mechanical Spare Parts" class="hero-transparent-image"
-                    loading="eager">
-                </div>
-              </div>
-
+            <!-- Eyebrow Tagline (Matching User Image Reference) -->
+            <div class="hero-eyebrow fade-up-element">
+              <span class="hero-eyebrow-dash"></span>
+              <span class="hero-eyebrow-text">YOUR TRUSTED PROCUREMENT &amp; SUPPLY PARTNER</span>
             </div>
-          </div>
-        </div>
 
-        <!-- Slide 2: Healthcare Diagnostic Devices & Educational IT Infrastructure -->
-        <div class="hero-slide" data-slide="1" aria-hidden="true">
-          <div class="container hero-container">
-            <div class="row align-items-center">
+            <!-- Main Headline (Exact 3-Line Composition Matching Image 1) -->
+            <h1 class="hero-main-title fade-up-element">
+              <span class="hero-title-line">Connecting Industries with</span><br>
+              <span class="hero-title-line">the Right Products,</span><br>
+              <span class="hero-title-line">Resources &amp; Solutions</span>
+            </h1>
 
-              <!-- Left Column: Typography, Badges, CTAs & Social Proof -->
-              <div class="col-lg-7 col-xl-6 hero-col-content">
-                <div class="hero-status-pill">
-                  <i class="bi bi-asterisk text-gold me-2"></i>
-                  <span class="hero-status-text">Healthcare &amp; Education Projects</span>
-                </div>
+            <!-- Body Descriptions -->
+            <p class="hero-lead-desc fade-up-element">
+              From medical equipment and IT infrastructure to industrial materials, automotive components and renewable
+              energy solutions, GSR Global Enterprises delivers reliable procurement and supply services tailored to
+              diverse industry requirements.
+            </p>
+            <p class="hero-sub-desc fade-up-element">
+              We simplify sourcing, streamline procurement and help organizations access the products and resources they
+              need to move forward.
+            </p>
 
-                <h2 class="hero-main-title">
-                  Empowering Public <br>
-                  <span class="hero-title-gradient">Healthcare &amp; Digital</span> <br>
-                  Institutions.
-                </h2>
-
-                <p class="hero-lead-desc">
-                  Specialized supply of certified diagnostic equipment, hospital surgical instruments, and turnkey smart
-                  school IT infrastructure with comprehensive warranty coordination.
-                </p>
-
-                <div class="hero-action-row">
-                  <a href="#services" class="btn-hero-action">
-                    <span>Explore Medical &amp; IT</span>
-                    <span class="btn-hero-circle"><i class="bi bi-arrow-right"></i></span>
-                  </a>
-
-                  <!-- Client Trust & Social Proof Stack -->
-                  <div class="hero-trust-stack">
-                    <div class="avatar-group">
-                      <img src="assets/images/avatar-1.svg" alt="Client 1" class="avatar-img">
-                      <img src="assets/images/avatar-2.svg" alt="Client 2" class="avatar-img">
-                      <img src="assets/images/avatar-3.svg" alt="Client 3" class="avatar-img">
-                    </div>
-                    <div class="trust-text-block">
-                      <div class="trust-stars">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <span class="trust-rating">5.0</span>
-                      </div>
-                      <span class="trust-label">ISO &amp; CE Certified Sourcing</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Right Column: 3D Transparent Sector Visual -->
-              <div class="col-lg-5 col-xl-6 hero-col-visual">
-                <div class="hero-stage-container">
-                  <div class="hero-ambient-glow glow-cyan"></div>
-                  <img src="assets/images/hero-transparent-it.webp"
-                    alt="Smart School IT Infrastructure &amp; Educational Hardware" class="hero-transparent-image"
-                    loading="lazy">
-                </div>
-              </div>
-
+            <!-- CTA Action Buttons -->
+            <div class="hero-action-row fade-up-element">
+              <a href="#services" class="btn-hero-primary" aria-label="Explore Our Services">
+                <span>Explore Our Services</span>
+                <i class="bi bi-arrow-right ms-1"></i>
+              </a>
+              <a href="#contact" class="btn-hero-secondary" aria-label="Discuss Your Requirements">
+                <span>Discuss Your Requirements</span>
+                <i class="bi bi-arrow-right ms-1"></i>
+              </a>
             </div>
-          </div>
-        </div>
 
-        <!-- Slide 3: Commercial Transit Workshop Fleet Spares & Clean Solar Energy -->
-        <div class="hero-slide" data-slide="2" aria-hidden="true">
-          <div class="container hero-container">
-            <div class="row align-items-center">
-
-              <!-- Left Column: Typography, Badges, CTAs & Social Proof -->
-              <div class="col-lg-7 col-xl-6 hero-col-content">
-                <div class="hero-status-pill">
-                  <i class="bi bi-asterisk text-gold me-2"></i>
-                  <span class="hero-status-text">Transit Workshops &amp; Renewable Energy</span>
-                </div>
-
-                <h2 class="hero-main-title">
-                  Heavy Commercial Spares <br>
-                  <span class="hero-title-gradient">&amp; High-Yield Clean</span> <br>
-                  Solar Energy.
-                </h2>
-
-                <p class="hero-lead-desc">
-                  Supplying APSRTC Zonal Workshops with precision mechanical bus spares, industrial structural steel,
-                  and tier-1 high-yield solar PV modules across Andhra Pradesh.
-                </p>
-
-                <div class="hero-action-row">
-                  <a href="#services" class="btn-hero-action">
-                    <span>Explore Fleet &amp; Solar</span>
-                    <span class="btn-hero-circle"><i class="bi bi-arrow-right"></i></span>
-                  </a>
-
-                  <!-- Client Trust & Social Proof Stack -->
-                  <div class="hero-trust-stack">
-                    <div class="avatar-group">
-                      <img src="assets/images/avatar-1.svg" alt="Client 1" class="avatar-img">
-                      <img src="assets/images/avatar-2.svg" alt="Client 2" class="avatar-img">
-                      <img src="assets/images/avatar-3.svg" alt="Client 3" class="avatar-img">
-                    </div>
-                    <div class="trust-text-block">
-                      <div class="trust-stars">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-half"></i>
-                        <span class="trust-rating">4.9</span>
-                      </div>
-                      <span class="trust-label">APSRTC Sourced Components</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Right Column: 3D Transparent Sector Visual -->
-              <div class="col-lg-5 col-xl-6 hero-col-visual">
-                <div class="hero-stage-container">
-                  <div class="hero-ambient-glow glow-amber"></div>
-                  <img src="assets/images/hero-transparent-solar.webp" alt="Tier-1 Solar Panels &amp; Transit Spares"
-                    class="hero-transparent-image" loading="lazy">
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Navigation Arrows (Left & Right) -->
-      <button class="hero-nav-arrow hero-arrow-prev" id="heroPrevBtn" type="button" aria-label="Previous Slide">
-        <i class="bi bi-chevron-left"></i>
-      </button>
-      <button class="hero-nav-arrow hero-arrow-next" id="heroNextBtn" type="button" aria-label="Next Slide">
-        <i class="bi bi-chevron-right"></i>
-      </button>
-
-      <!-- Bottom Infinite Scrolling Ticker (Down Scrolling - Exactly Matching Reference) -->
-      <div class="hero-marquee-bar" aria-label="Core Procurement Capabilities">
-        <div class="marquee-track">
-          <div class="marquee-content">
-            <span class="marquee-item">Medical Equipment &amp; Healthcare Devices</span>
-            <span class="marquee-sep"><i class="bi bi-asterisk"></i></span>
-            <span class="marquee-item">Educational IT Infrastructure &amp; Smart Labs</span>
-            <span class="marquee-sep"><i class="bi bi-asterisk"></i></span>
-            <span class="marquee-item">Industrial Iron, Structural Steel &amp; Synthetic Yarn</span>
-            <span class="marquee-sep"><i class="bi bi-asterisk"></i></span>
-            <span class="marquee-item">Commercial Bus &amp; Fleet Spare Parts</span>
-            <span class="marquee-sep"><i class="bi bi-asterisk"></i></span>
-            <span class="marquee-item">High-Yield Solar PV Modules &amp; Systems</span>
-            <span class="marquee-sep"><i class="bi bi-asterisk"></i></span>
-            <span class="marquee-item">APSRTC &amp; State Undertakings Sourcing</span>
-            <span class="marquee-sep"><i class="bi bi-asterisk"></i></span>
-            <span class="marquee-item">Turnkey Supply Logistics &amp; Contract Execution</span>
-            <span class="marquee-sep"><i class="bi bi-asterisk"></i></span>
-            <span class="marquee-item">GST &amp; GeM Verified Procurement</span>
-            <span class="marquee-sep"><i class="bi bi-asterisk"></i></span>
-          </div>
-          <div class="marquee-content" aria-hidden="true">
-            <span class="marquee-item">Medical Equipment &amp; Healthcare Devices</span>
-            <span class="marquee-sep"><i class="bi bi-asterisk"></i></span>
-            <span class="marquee-item">Educational IT Infrastructure &amp; Smart Labs</span>
-            <span class="marquee-sep"><i class="bi bi-asterisk"></i></span>
-            <span class="marquee-item">Industrial Iron, Structural Steel &amp; Synthetic Yarn</span>
-            <span class="marquee-sep"><i class="bi bi-asterisk"></i></span>
-            <span class="marquee-item">Commercial Bus &amp; Fleet Spare Parts</span>
-            <span class="marquee-sep"><i class="bi bi-asterisk"></i></span>
-            <span class="marquee-item">High-Yield Solar PV Modules &amp; Systems</span>
-            <span class="marquee-sep"><i class="bi bi-asterisk"></i></span>
-            <span class="marquee-item">APSRTC &amp; State Undertakings Sourcing</span>
-            <span class="marquee-sep"><i class="bi bi-asterisk"></i></span>
-            <span class="marquee-item">Turnkey Supply Logistics &amp; Contract Execution</span>
-            <span class="marquee-sep"><i class="bi bi-asterisk"></i></span>
-            <span class="marquee-item">GST &amp; GeM Verified Procurement</span>
-            <span class="marquee-sep"><i class="bi bi-asterisk"></i></span>
           </div>
         </div>
       </div>
-
     </section>
 
     <!-- ==========================================================================
-         B. ABOUT US SECTION - EXACT REFERENCE ALIGNMENT (PROPORTIONAL 2-COL LAYOUT)
+         A2. 5 CORE SECTOR CARDS (EXACT REFERENCE DESIGN STYLE - 5 STANDALONE CARDS)
          ========================================================================== -->
-    <section class="about-section" id="about">
+    <section class="hero-docked-cards-section" id="sectors" aria-label="Core Business Sectors">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-3 g-xl-4 justify-content-center">
+
+          <!-- Card 1: Medical & Healthcare Supplies -->
+          <div class="col fade-up-element">
+            <div class="hero-dock-card h-100">
+              <div class="dock-card-badge" aria-hidden="true">
+                <i class="bi bi-hospital"></i>
+              </div>
+              <div class="dock-card-body">
+                <h3 class="dock-card-title">Medical &amp; Healthcare</h3>
+                <p class="dock-card-desc">Diagnostic equipment, ICU devices &amp; clinical hospital supplies.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: GCC & IT Infrastructure -->
+          <div class="col fade-up-element">
+            <div class="hero-dock-card h-100">
+              <div class="dock-card-badge" aria-hidden="true">
+                <i class="bi bi-display"></i>
+              </div>
+              <div class="dock-card-body">
+                <h3 class="dock-card-title">GCC &amp; IT Infrastructure</h3>
+                <p class="dock-card-desc">Enterprise workstations, servers, networking &amp; digital systems.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Government & Education Projects -->
+          <div class="col fade-up-element">
+            <div class="hero-dock-card h-100">
+              <div class="dock-card-badge" aria-hidden="true">
+                <i class="bi bi-bank2"></i>
+              </div>
+              <div class="dock-card-body">
+                <h3 class="dock-card-title">Government &amp; Education</h3>
+                <p class="dock-card-desc">Institutional classroom assets, lab setups &amp; public procurement.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Industrial & Manufacturing Supplies -->
+          <div class="col fade-up-element">
+            <div class="hero-dock-card h-100">
+              <div class="dock-card-badge" aria-hidden="true">
+                <i class="bi bi-gear-wide-connected"></i>
+              </div>
+              <div class="dock-card-body">
+                <h3 class="dock-card-title">Industrial Materials</h3>
+                <p class="dock-card-desc">TMT steel rebar, structural sections &amp; manufacturing essentials.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: Automobile & Transportation Supplies -->
+          <div class="col fade-up-element">
+            <div class="hero-dock-card h-100">
+              <div class="dock-card-badge" aria-hidden="true">
+                <i class="bi bi-bus-front"></i>
+              </div>
+              <div class="dock-card-body">
+                <h3 class="dock-card-title">Automotive &amp; Transit</h3>
+                <p class="dock-card-desc">Commercial bus components, fleet spares &amp; vehicle maintenance.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         B. ABOUT US SECTION (EXACT REFERENCE DESIGN STYLE - CORPORATE CONSULTING)
+         ========================================================================== -->
+    <section class="about-section" id="about" aria-label="About GSR Global Enterprises">
       <div class="container">
 
-        <div class="about-ref-layout">
+        <div class="row g-4 g-lg-5 align-items-center">
 
-          <!-- Left Column: Image 1 & Image 2 (Equal ~235px Heights, 16px Gap, No Empty Space) -->
-          <div class="about-ref-left-col fade-up-element">
-            <div class="about-img-box about-img-box-1">
-              <img src="assets/images/about-medical.webp" alt="Biomedical diagnostic equipment and hospital surgical technology"
-                loading="lazy">
-            </div>
-            <div class="about-img-box about-img-box-2">
-              <img src="assets/images/about-steel.webp" alt="Industrial structural steel, TMT rebar processing and anti-corrosion coating line"
-                loading="lazy">
+          <!-- Left Column: High-Resolution Geometric Cutout Image with Customizable Experience Badge -->
+          <div class="col-lg-6 fade-up-element">
+            <div class="about-ref-media-box">
+              <!-- Geometric Framed Image Container -->
+              <div class="about-ref-img-frame-wrap">
+                <div class="about-ref-img-frame">
+                  <picture>
+                    <source srcset="assets/images/about-corporate-team-meeting.webp" type="image/webp">
+                    <img src="assets/images/about-corporate-team-meeting.jpg"
+                      alt="GSR Global Enterprises Corporate Team Consultation and Procurement Strategy"
+                      class="about-ref-img" width="1200" height="896" loading="lazy">
+                  </picture>
+                </div>
+              </div>
+
+              <!-- Customizable Experience Badge (Directly editable in HTML) -->
+              <div class="about-ref-exp-badge" aria-label="Company Experience Badge">
+                <span class="exp-badge-number">1+</span>
+                <div class="exp-badge-labels">
+                  <span class="exp-badge-line">Years</span>
+                  <span class="exp-badge-line">Experience</span>
+                </div>
+              </div>
             </div>
           </div>
 
-          <!-- Right Main Area: Upper (Image 3 + Content) & Lower (Dark Banner) -->
-          <div class="about-ref-right-area fade-up-element">
+          <!-- Right Column: Exact Reference Content Layout -->
+          <div class="col-lg-6 fade-up-element">
+            <div class="about-ref-content">
 
-            <!-- Upper Row: Image 3 (Middle) + Text Content (Right) -->
-            <div class="about-ref-top-row">
-
-              <!-- Middle Tall Image 3 (Solar) -->
-              <div class="about-ref-mid-img">
-                <div class="about-img-box about-img-box-3">
-                  <img src="assets/images/about-solar.webp"
-                    alt="Solar energy panels and sustainable infrastructure solutions" loading="lazy">
-                </div>
+              <!-- Top Outlined Pill: ABOUT US (Exact Reference Style) -->
+              <div class="about-eyebrow mb-3">
+                <span class="about-eyebrow-dash"></span>
+                <span class="about-eyebrow-text">WHO WE ARE</span>
+                <span class="about-eyebrow-dash"></span>
               </div>
 
-              <!-- Right Text Content -->
-              <div class="about-ref-content">
+              <!-- Main Corporate Heading -->
+              <h2 class="about-ref-title mb-3">
+                Your Partner in Smarter Sourcing and Reliable Procurement
+              </h2>
 
-                <!-- Overline Badge -->
-                <div class="about-tagline-bolt">
-                  <i class="bi bi-shield-check text-gold"></i>
-                  <span>ABOUT GSR GLOBAL ENTERPRISES</span>
-                </div>
+              <!-- Corporate Content Paragraphs (Clean & Balanced Typography) -->
+              <p class="about-ref-p about-ref-lead mb-3">
+                <strong>GSR Global Enterprises</strong> is a multi-sector procurement and supply company committed to
+                supporting businesses, institutions, government initiatives and industrial organizations with dependable
+                sourcing solutions.
+              </p>
 
-                <!-- Main Heading matching reference bold style -->
-                <h2 class="about-ref-title">
-                  We Are Here To Deliver Procurement Excellence Across Industries.
-                </h2>
+              <p class="about-ref-p mb-3">
+                We specialize in procuring and supplying a diverse range of products across medical and healthcare,
+                information technology, education infrastructure, industrial manufacturing, automotive and renewable
+                energy sectors.
+              </p>
 
-                <!-- Pill Tabs: Our History / Our Mission / Our Vision -->
-                <div class="about-pill-capsule">
-                  <ul class="nav nav-pills" id="aboutTab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                      <button class="nav-link active" id="pill-history-tab" data-bs-toggle="pill"
-                        data-bs-target="#pill-history" type="button" role="tab" aria-controls="pill-history"
-                        aria-selected="true">Our History</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                      <button class="nav-link" id="pill-mission-tab" data-bs-toggle="pill"
-                        data-bs-target="#pill-mission" type="button" role="tab" aria-controls="pill-mission"
-                        aria-selected="false">Our Mission</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                      <button class="nav-link" id="pill-vision-tab" data-bs-toggle="pill" data-bs-target="#pill-vision"
-                        type="button" role="tab" aria-controls="pill-vision" aria-selected="false">Our Vision</button>
-                    </li>
-                  </ul>
-                </div>
+              <p class="about-ref-p mb-3">
+                Understanding that every industry has unique operational requirements, we focus on identifying suitable
+                products, coordinating procurement and delivering solutions aligned with our customers' specifications,
+                timelines and objectives.
+              </p>
 
-                <!-- Tab Contents -->
-                <div class="tab-content" id="aboutTabContent">
+              <p class="about-ref-p mb-4">
+                Our approach is built around professional coordination, transparent communication and long-term business
+                relationships.
+              </p>
 
-                  <!-- Tab 1: Our History (Active) -->
-                  <div class="tab-pane fade show active" id="pill-history" role="tabpanel"
-                    aria-labelledby="pill-history-tab">
-                    <p class="about-ref-body">
-                      <strong>GSR GLOBAL ENTERPRISES</strong> is an established multi-sector procurement, industrial
-                      supply, and infrastructure solutions enterprise headquartered in Andhra Pradesh, India. We bridge
-                      institutional demand with dependable manufacturing channels across critical healthcare, education,
-                      transport, and renewable energy sectors.
-                    </p>
-
-                    <!-- 2-Column Checklist with Gold Checkmarks -->
-                    <div class="row g-2 about-ref-check-grid">
-                      <div class="col-sm-6">
-                        <div class="about-ref-check-item">
-                          <i class="bi bi-check-circle-fill"></i>
-                          <span>Direct OEM &amp; Primary Stockists</span>
-                        </div>
-                      </div>
-                      <div class="col-sm-6">
-                        <div class="about-ref-check-item">
-                          <i class="bi bi-check-circle-fill"></i>
-                          <span>Strict Pre-Dispatch Testing</span>
-                        </div>
-                      </div>
-                      <div class="col-sm-6">
-                        <div class="about-ref-check-item">
-                          <i class="bi bi-check-circle-fill"></i>
-                          <span>100% Tax &amp; GST Invoicing</span>
-                        </div>
-                      </div>
-                      <div class="col-sm-6">
-                        <div class="about-ref-check-item">
-                          <i class="bi bi-check-circle-fill"></i>
-                          <span>Dual Regional Hubs in AP</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Tab 2: Our Mission -->
-                  <div class="tab-pane fade" id="pill-mission" role="tabpanel" aria-labelledby="pill-mission-tab">
-                    <p class="about-ref-body">
-                      Our mission is to empower government institutions, transit workshops, educational development
-                      programs, and industrial enterprises with seamless, transparent, and on-time procurement solutions
-                      that eliminate supply chain bottlenecks and guarantee verified standards.
-                    </p>
-
-                    <div class="row g-2 about-ref-check-grid">
-                      <div class="col-sm-6">
-                        <div class="about-ref-check-item">
-                          <i class="bi bi-check-circle-fill"></i>
-                          <span>Eliminating Sourcing Bottlenecks</span>
-                        </div>
-                      </div>
-                      <div class="col-sm-6">
-                        <div class="about-ref-check-item">
-                          <i class="bi bi-check-circle-fill"></i>
-                          <span>Standardized Technical Compliance</span>
-                        </div>
-                      </div>
-                      <div class="col-sm-6">
-                        <div class="about-ref-check-item">
-                          <i class="bi bi-check-circle-fill"></i>
-                          <span>Transparent Commercial Invoicing</span>
-                        </div>
-                      </div>
-                      <div class="col-sm-6">
-                        <div class="about-ref-check-item">
-                          <i class="bi bi-check-circle-fill"></i>
-                          <span>Disciplined On-Site Handover</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Tab 3: Our Vision -->
-                  <div class="tab-pane fade" id="pill-vision" role="tabpanel" aria-labelledby="pill-vision-tab">
-                    <p class="about-ref-body">
-                      Our vision is to be recognized as Andhra Pradesh's most dependable and comprehensive institutional
-                      supply partner, respected for uncompromising integrity, multi-sector agility, and long-term
-                      relationships with public and commercial enterprises.
-                    </p>
-
-                    <div class="row g-2 about-ref-check-grid">
-                      <div class="col-sm-6">
-                        <div class="about-ref-check-item">
-                          <i class="bi bi-check-circle-fill"></i>
-                          <span>Multi-Industry Sourcing Reach</span>
-                        </div>
-                      </div>
-                      <div class="col-sm-6">
-                        <div class="about-ref-check-item">
-                          <i class="bi bi-check-circle-fill"></i>
-                          <span>Zero-Defect Delivery Discipline</span>
-                        </div>
-                      </div>
-                      <div class="col-sm-6">
-                        <div class="about-ref-check-item">
-                          <i class="bi bi-check-circle-fill"></i>
-                          <span>Sustainable Supply Pipelines</span>
-                        </div>
-                      </div>
-                      <div class="col-sm-6">
-                        <div class="about-ref-check-item">
-                          <i class="bi bi-check-circle-fill"></i>
-                          <span>Enduring Institutional Trust</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-
-                <!-- Action Row: Learn More Button + Reviews -->
-                <div class="about-ref-action-row">
-                  <a href="#services" class="btn btn-gold btn-ref-action">
-                    <span>Learn More</span>
-                    <i class="bi bi-arrow-right ms-2"></i>
-                  </a>
-
-                  <div class="about-ref-review">
-                    <div class="ref-avatar-stack">
-                      <span class="ref-avatar-chip" title="Healthcare Equipment"><i class="bi bi-hospital"></i></span>
-                      <span class="ref-avatar-chip" title="Structural Steel &amp; Industrial Metals"><i class="bi bi-buildings"></i></span>
-                      <span class="ref-avatar-chip" title="Solar Clean Energy"><i class="bi bi-sun"></i></span>
-                    </div>
-                    <div>
-                      <div class="ref-review-num">24K+</div>
-                      <div class="ref-review-lbl">Institutional Review</div>
-                    </div>
-                  </div>
-                </div>
-
+              <!-- CTA Button: Exact Reference Shape & Arrow with Brand Colors -->
+              <div class="about-ref-cta-wrap">
+                <a href="#services" class="btn-ref-cta" aria-label="Know More About Our Capabilities">
+                  <span>Know More About Our Capabilities</span>
+                  <i class="bi bi-arrow-up-right"></i>
+                </a>
               </div>
 
             </div>
-
-            <!-- Lower Row: Dark Banner sitting directly under Image 3 & Content (Beside Image 2) -->
-            <div class="about-ref-banner">
-              <div class="row g-0 align-items-center text-center">
-
-                <div class="col-3 ref-stat-divider">
-                  <div class="about-ref-stat-col">
-                    <div class="ref-stat-num">100+</div>
-                    <div class="ref-stat-title">Verified Consignments</div>
-                  </div>
-                </div>
-
-                <div class="col-3 ref-stat-divider">
-                  <div class="about-ref-stat-col">
-                    <div class="ref-stat-num">5+</div>
-                    <div class="ref-stat-title">Sourcing Verticals</div>
-                  </div>
-                </div>
-
-                <div class="col-3 ref-stat-divider">
-                  <div class="about-ref-stat-col">
-                    <div class="ref-stat-num">2</div>
-                    <div class="ref-stat-title">Regional AP Hubs</div>
-                  </div>
-                </div>
-
-                <div class="col-3">
-                  <div class="about-ref-stat-col">
-                    <div class="ref-stat-num">100%</div>
-                    <div class="ref-stat-title">GST &amp; Tax Compliant</div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
           </div>
 
         </div>
@@ -635,206 +376,311 @@
       </div>
     </section>
 
-
     <!-- ==========================================================================
-         C. OUR SERVICES (5 MAJOR CATEGORIES - CAROUSEL LAYOUT)
+         C. OUR SERVICES (3 CARDS PER ROW - COMPACT PROFESSIONAL GRID)
          ========================================================================== -->
     <section class="services-section" id="services">
       <div class="container">
 
-        <!-- Section Header with Title on Left & Carousel Arrows on Right -->
-        <div class="services-header-row mb-5 fade-up-element">
-          <div>
-            <div class="services-tagline-bolt">
-              <i class="bi bi-shield-check text-gold"></i>
-              <span>CORE SOURCING CAPABILITIES</span>
-            </div>
-            <h2 class="services-carousel-main-title">
-              Where Quality Meets Institutional Reliability.
-            </h2>
-            <div class="divider-gold"></div>
-            <p class="section-desc mb-0">
-              GSR GLOBAL ENTERPRISES delivers specialized procurement across five core sectors, matching technical
-              specifications with reliable delivery timelines.
-            </p>
+        <!-- Section Header (Centered Corporate Style) -->
+        <div class="text-center mb-4 fade-up-element">
+          <div class="services-eyebrow mb-2">
+            <span class="services-eyebrow-dash"></span>
+            <span class="services-eyebrow-text">WHAT WE DO</span>
+            <span class="services-eyebrow-dash"></span>
           </div>
-
-          <!-- Carousel Controls: Prev & Next Arrows (Matching Reference Image) -->
-          <div class="services-carousel-controls">
-            <button class="carousel-nav-btn" id="servicesCarouselPrev" type="button" aria-label="Previous service">
-              <i class="bi bi-arrow-left"></i>
-            </button>
-            <button class="carousel-nav-btn" id="servicesCarouselNext" type="button" aria-label="Next service">
-              <i class="bi bi-arrow-right"></i>
-            </button>
-          </div>
+          <h2 class="services-section-title mb-2">
+            Comprehensive Procurement Solutions Across Multiple Industries
+          </h2>
+          <p class="services-section-subtitle mx-auto">
+            From specialized equipment to essential industrial materials, we help customers source the right products
+            for their business and project requirements.
+          </p>
         </div>
 
-        <!-- Carousel Track (3 Cards Visible on Desktop, Smooth Scrolling) -->
-        <div class="services-carousel-wrapper fade-up-element">
-          <div class="services-carousel-track" id="servicesCarouselTrack">
+        <div id="industries" style="scroll-margin-top: 100px;"></div>
 
-            <!-- Card 01: Medical Equipment & Devices -->
-            <div class="service-carousel-card">
-              <div class="service-card-media">
-                <img src="assets/images/service-medical.webp" alt="Medical Equipment and Devices Procurement"
-                  loading="lazy">
-                <div class="service-card-icon-badge" title="Medical Devices">
-                  <i class="bi bi-hospital"></i>
-                </div>
+        <!-- 3 Cards Per Row Grid Layout (Compact 3 Points Each) -->
+        <div class="row g-4 justify-content-center">
+
+          <!-- Card 1: Medical & Healthcare Supplies -->
+          <div class="col-lg-4 col-md-6 fade-up-element">
+            <div class="service-pro-card h-100">
+              <div class="service-pro-media">
+                <img src="assets/images/service-pro-medical.webp" alt="Medical & Healthcare Supplies" loading="lazy">
               </div>
-              <div class="service-card-content">
-                <div class="service-cat-pill">01 • HEALTHCARE</div>
-                <h3 class="service-card-heading">Medical Equipment &amp; Devices</h3>
-                <p class="service-card-summary">
-                  Procurement and supply of hospital-grade medical equipment, clinical diagnostic devices, sterilization
-                  units, and healthcare consumables.
+              <div class="service-pro-body">
+                <h3 class="service-pro-title">Medical &amp; Healthcare Supplies</h3>
+                <p class="service-pro-desc">
+                  Supporting healthcare institutions, hospitals and medical organizations with procurement of essential
+                  medical equipment and devices.
                 </p>
-                <div class="service-card-bottom-row">
-                  <button type="button" class="btn btn-outline-navy btn-sm" data-service-key="medical">
-                    <i class="bi bi-info-circle me-1"></i>
+                <div class="service-pro-divider"></div>
+                <ul class="service-pro-checklist">
+                  <li><i class="bi bi-chevron-right"></i><span>Medical equipment and devices</span></li>
+                  <li><i class="bi bi-chevron-right"></i><span>Hospital and clinical supplies</span></li>
+                  <li><i class="bi bi-chevron-right"></i><span>Diagnostic and monitoring equipment</span></li>
+                </ul>
+                <div class="service-pro-footer">
+                  <button type="button" class="btn-pro-readmore" data-service-key="medical">
                     <span>Read More</span>
+                    <i class="bi bi-arrow-right"></i>
                   </button>
-                  <a href="#contact" class="btn btn-gold btn-sm btn-enroll-now" data-select-service="01">
-                    <span>Enroll Now</span>
-                    <i class="bi bi-arrow-right ms-1"></i>
-                  </a>
                 </div>
               </div>
             </div>
-
-            <!-- Card 02: Computers & IT Infrastructure -->
-            <div class="service-carousel-card">
-              <div class="service-card-media">
-                <img src="assets/images/service-it.webp" alt="Computers and IT Infrastructure Procurement"
-                  loading="lazy">
-                <div class="service-card-icon-badge" title="IT Infrastructure">
-                  <i class="bi bi-display"></i>
-                </div>
-              </div>
-              <div class="service-card-content">
-                <div class="service-cat-pill">02 • EDUCATION &amp; IT</div>
-                <h3 class="service-card-heading">Computers &amp; IT Infrastructure</h3>
-                <p class="service-card-summary">
-                  Supply of enterprise desktops, laptops, interactive digital flat panels, and networking systems for
-                  school transformation and educational development.
-                </p>
-                <div class="service-card-bottom-row">
-                  <button type="button" class="btn btn-outline-navy btn-sm" data-service-key="it">
-                    <i class="bi bi-info-circle me-1"></i>
-                    <span>Read More</span>
-                  </button>
-                  <a href="#contact" class="btn btn-gold btn-sm btn-enroll-now" data-select-service="02">
-                    <span>Enroll Now</span>
-                    <i class="bi bi-arrow-right ms-1"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 03: Iron, Steel & Yarn Procurement -->
-            <div class="service-carousel-card">
-              <div class="service-card-media">
-                <img src="assets/images/service-steel.webp" alt="Iron, Steel and Yarn Procurement" loading="lazy">
-                <div class="service-card-icon-badge" title="Industrial Materials">
-                  <i class="bi bi-buildings"></i>
-                </div>
-              </div>
-              <div class="service-card-content">
-                <div class="service-cat-pill">03 • INDUSTRIAL &amp; METALS</div>
-                <h3 class="service-card-heading">Iron, Steel &amp; Yarn Procurement</h3>
-                <p class="service-card-summary">
-                  Procurement and supply of certified structural TMT steel, heavy plates, industrial sections, and
-                  commercial-grade textile yarn for manufacturing plants.
-                </p>
-                <div class="service-card-bottom-row">
-                  <button type="button" class="btn btn-outline-navy btn-sm" data-service-key="steel">
-                    <i class="bi bi-info-circle me-1"></i>
-                    <span>Read More</span>
-                  </button>
-                  <a href="#contact" class="btn btn-gold btn-sm btn-enroll-now" data-select-service="03">
-                    <span>Enroll Now</span>
-                    <i class="bi bi-arrow-right ms-1"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 04: Automobile & Bus Spare Parts -->
-            <div class="service-carousel-card">
-              <div class="service-card-media">
-                <img src="assets/images/service-transit.webp" alt="Automobile and Bus Spare Parts Procurement"
-                  loading="lazy">
-                <div class="service-card-icon-badge" title="Automotive & Transit">
-                  <i class="bi bi-bus-front"></i>
-                </div>
-              </div>
-              <div class="service-card-content">
-                <div class="service-cat-pill">04 • AUTOMOTIVE &amp; TRANSIT</div>
-                <h3 class="service-card-heading">Automobile &amp; Bus Spare Parts</h3>
-                <p class="service-card-summary">
-                  Sourcing and procurement of commercial transport vehicle spares, heavy bus assemblies, braking
-                  components, and maintenance hardware.
-                </p>
-                <div class="service-card-bottom-row">
-                  <button type="button" class="btn btn-outline-navy btn-sm" data-service-key="auto">
-                    <i class="bi bi-info-circle me-1"></i>
-                    <span>Read More</span>
-                  </button>
-                  <a href="#contact" class="btn btn-gold btn-sm btn-enroll-now" data-select-service="04">
-                    <span>Enroll Now</span>
-                    <i class="bi bi-arrow-right ms-1"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 05: Solar Panel Procurement -->
-            <div class="service-carousel-card">
-              <div class="service-card-media">
-                <img src="assets/images/service-solar.webp" alt="Solar Panel and Renewable Energy Procurement"
-                  loading="lazy">
-                <div class="service-card-icon-badge" title="Solar & Renewable">
-                  <i class="bi bi-sun"></i>
-                </div>
-              </div>
-              <div class="service-card-content">
-                <div class="service-cat-pill">05 • RENEWABLE ENERGY</div>
-                <h3 class="service-card-heading">Solar Panel Procurement</h3>
-                <p class="service-card-summary">
-                  Procurement and supply of tier-1 monocrystalline solar PV modules, grid-tied solar inverters, and
-                  durable mounting structures.
-                </p>
-                <div class="service-card-bottom-row">
-                  <button type="button" class="btn btn-outline-navy btn-sm" data-service-key="solar">
-                    <i class="bi bi-info-circle me-1"></i>
-                    <span>Read More</span>
-                  </button>
-                  <a href="#contact" class="btn btn-gold btn-sm btn-enroll-now" data-select-service="05">
-                    <span>Enroll Now</span>
-                    <i class="bi bi-arrow-right ms-1"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-
           </div>
+
+          <!-- Card 2: GCC & IT Infrastructure -->
+          <div class="col-lg-4 col-md-6 fade-up-element">
+            <div class="service-pro-card h-100">
+              <div class="service-pro-media">
+                <img src="assets/images/service-pro-it.webp" alt="GCC & IT Infrastructure" loading="lazy">
+              </div>
+              <div class="service-pro-body">
+                <h3 class="service-pro-title">GCC &amp; IT Infrastructure</h3>
+                <p class="service-pro-desc">
+                  Providing computer systems, technology products and IT infrastructure for organizations and
+                  large-scale school transformation projects and programs.
+                </p>
+                <div class="service-pro-divider"></div>
+                <ul class="service-pro-checklist">
+                  <li><i class="bi bi-chevron-right"></i><span>Desktop computers and laptops</span></li>
+                  <li><i class="bi bi-chevron-right"></i><span>Computer laboratory equipment</span></li>
+                  <li><i class="bi bi-chevron-right"></i><span>Networking and IT infrastructure</span></li>
+                </ul>
+                <div class="service-pro-footer">
+                  <button type="button" class="btn-pro-readmore" data-service-key="it">
+                    <span>Read More</span>
+                    <i class="bi bi-arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Government & Education Projects -->
+          <div class="col-lg-4 col-md-6 fade-up-element">
+            <div class="service-pro-card h-100">
+              <div class="service-pro-media">
+                <img src="assets/images/service-pro-education.webp" alt="Government & Education Projects"
+                  loading="lazy">
+              </div>
+              <div class="service-pro-body">
+                <h3 class="service-pro-title">Government &amp; Education Projects</h3>
+                <p class="service-pro-desc">
+                  Supporting government departments, educational institutions and project implementation agencies
+                  through coordinated procurement and supply solutions.
+                </p>
+                <div class="service-pro-divider"></div>
+                <ul class="service-pro-checklist">
+                  <li><i class="bi bi-chevron-right"></i><span>School transformation projects</span></li>
+                  <li><i class="bi bi-chevron-right"></i><span>Educational technology and equipment</span></li>
+                  <li><i class="bi bi-chevron-right"></i><span>Institutional infrastructure supplies</span></li>
+                </ul>
+                <div class="service-pro-footer">
+                  <button type="button" class="btn-pro-readmore" data-service-key="govt-education">
+                    <span>Read More</span>
+                    <i class="bi bi-arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Industrial & Manufacturing Supplies -->
+          <div class="col-lg-4 col-md-6 fade-up-element">
+            <div class="service-pro-card h-100">
+              <div class="service-pro-media">
+                <img src="assets/images/service-pro-industrial.webp" alt="Industrial & Manufacturing Supplies"
+                  loading="lazy">
+              </div>
+              <div class="service-pro-body">
+                <h3 class="service-pro-title">Industrial &amp; Manufacturing Supplies</h3>
+                <p class="service-pro-desc">
+                  Helping manufacturers and industrial businesses source essential raw materials and production-related
+                  supplies.
+                </p>
+                <div class="service-pro-divider"></div>
+                <ul class="service-pro-checklist">
+                  <li><i class="bi bi-chevron-right"></i><span>Iron and steel materials</span></li>
+                  <li><i class="bi bi-chevron-right"></i><span>Industrial raw materials</span></li>
+                  <li><i class="bi bi-chevron-right"></i><span>Textile yarn and related supplies</span></li>
+                </ul>
+                <div class="service-pro-footer">
+                  <button type="button" class="btn-pro-readmore" data-service-key="industrial">
+                    <span>Read More</span>
+                    <i class="bi bi-arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: Automobile & Transportation Supplies -->
+          <div class="col-lg-4 col-md-6 fade-up-element">
+            <div class="service-pro-card h-100">
+              <div class="service-pro-media">
+                <img src="assets/images/service-pro-automotive.webp" alt="Automobile & Transportation Supplies"
+                  loading="lazy">
+              </div>
+              <div class="service-pro-body">
+                <h3 class="service-pro-title">Automobile &amp; Transportation Supplies</h3>
+                <p class="service-pro-desc">
+                  Supporting automotive businesses, fleet operators and transportation projects with procurement of bus
+                  parts and automotive components.
+                </p>
+                <div class="service-pro-divider"></div>
+                <ul class="service-pro-checklist">
+                  <li><i class="bi bi-chevron-right"></i><span>Bus spare parts and components</span></li>
+                  <li><i class="bi bi-chevron-right"></i><span>Automotive mechanical components</span></li>
+                  <li><i class="bi bi-chevron-right"></i><span>Vehicle maintenance supplies</span></li>
+                </ul>
+                <div class="service-pro-footer">
+                  <button type="button" class="btn-pro-readmore" data-service-key="auto">
+                    <span>Read More</span>
+                    <i class="bi bi-arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
 
       </div>
     </section>
 
     <!-- ==========================================================================
-         E. OUR CLIENTS (INSTITUTIONAL REFERENCES)
+         D. WHY CHOOSE US (EXACT REFERENCE DESIGN - 3x2 DARK CORPORATE GRID)
+         ========================================================================== -->
+    <section class="why-us-section" id="why-us" aria-label="Why Partner With GSR Global Enterprises">
+      <div class="container">
+
+        <!-- Section Header (Centered Brand Dash Style) -->
+        <div class="text-center mb-5 fade-up-element">
+          <div class="why-eyebrow mb-2">
+            <span class="why-eyebrow-dash"></span>
+            <span class="why-eyebrow-text">WHY CHOOSE US</span>
+            <span class="why-eyebrow-dash"></span>
+          </div>
+          <h2 class="why-section-title mb-2">
+            Why Partner With GSR GLOBAL ENTERPRISES
+          </h2>
+          <p class="why-section-subtitle mx-auto">
+            We simplify complex procurement challenges by providing a single, dependable corporate interface across
+            diverse industry sectors.
+          </p>
+        </div>
+
+        <!-- 3x2 Grid (Exact Reference Card Design: Dark Card, Outline Icon Box, Bold Title, Clean Desc) -->
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+          <!-- Card 1: Multi-Sector Capabilities -->
+          <div class="col fade-up-element">
+            <div class="why-ref-card h-100">
+              <div class="why-ref-icon-box" aria-hidden="true">
+                <i class="bi bi-layers"></i>
+              </div>
+              <h3 class="why-ref-title">MULTI-SECTOR CAPABILITIES</h3>
+              <p class="why-ref-desc">
+                Broad sourcing reach spanning healthcare, digital IT infrastructure, industrial materials, transit
+                spares, and renewable power.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 2: Diverse Product Sourcing -->
+          <div class="col fade-up-element">
+            <div class="why-ref-card h-100">
+              <div class="why-ref-icon-box" aria-hidden="true">
+                <i class="bi bi-box-seam"></i>
+              </div>
+              <h3 class="why-ref-title">DIVERSE PRODUCT SOURCING</h3>
+              <p class="why-ref-desc">
+                Direct connections with certified OEM factories, foundries, and technology vendors capable of handling
+                specialized procurement batches.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 3: Reliable Supply Solutions -->
+          <div class="col fade-up-element">
+            <div class="why-ref-card h-100">
+              <div class="why-ref-icon-box" aria-hidden="true">
+                <i class="bi bi-truck"></i>
+              </div>
+              <h3 class="why-ref-title">RELIABLE SUPPLY SOLUTIONS</h3>
+              <p class="why-ref-desc">
+                Established regional transport and distribution logistics that ensure timely arrivals and dependable
+                inventory delivery.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 4: Customer-Oriented Service -->
+          <div class="col fade-up-element">
+            <div class="why-ref-card h-100">
+              <div class="why-ref-icon-box" aria-hidden="true">
+                <i class="bi bi-people"></i>
+              </div>
+              <h3 class="why-ref-title">CUSTOMER-ORIENTED SERVICE</h3>
+              <p class="why-ref-desc">
+                Tailored procurement strategies matched to the exact operational objectives and administrative schedules
+                of each client organization.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 5: Quality-Focused Approach -->
+          <div class="col fade-up-element">
+            <div class="why-ref-card h-100">
+              <div class="why-ref-icon-box" aria-hidden="true">
+                <i class="bi bi-shield-check"></i>
+              </div>
+              <h3 class="why-ref-title">QUALITY-FOCUSED APPROACH</h3>
+              <p class="why-ref-desc">
+                Uncompromising standard of material verification, compliance certification checks, and rigorous batch
+                quality assurance.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 6: Professional Coordination -->
+          <div class="col fade-up-element">
+            <div class="why-ref-card h-100">
+              <div class="why-ref-icon-box" aria-hidden="true">
+                <i class="bi bi-briefcase"></i>
+              </div>
+              <h3 class="why-ref-title">PROFESSIONAL COORDINATION</h3>
+              <p class="why-ref-desc">
+                Clear communication, proactive milestone tracking, and seamless administrative support throughout the
+                purchase order lifecycle.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         E. CLIENTS (INSTITUTIONAL REFERENCES)
          ========================================================================== -->
     <section class="clients-section" id="clients">
       <div class="container">
 
         <div class="text-center mb-5 fade-up-element">
-          <span class="section-overline">Verified Supply Relationships</span>
-          <h2 class="section-heading">Institutional Client References</h2>
-          <div class="divider-gold center"></div>
-          <p class="section-desc mx-auto">
+          <div class="clients-eyebrow mb-2">
+            <span class="clients-eyebrow-dash"></span>
+            <span class="clients-eyebrow-text">VERIFIED SUPPLY RELATIONSHIPS</span>
+            <span class="clients-eyebrow-dash"></span>
+          </div>
+          <h2 class="clients-section-title mb-2">
+            Institutional Client References
+          </h2>
+          <p class="clients-section-subtitle mx-auto">
             We are honored to have executed reliable procurement and institutional supply requirements for respected
             government and public-sector authorities in Andhra Pradesh.
           </p>
@@ -901,258 +747,122 @@
       </div>
     </section>
 
-
-    <!-- ==========================================================================
-         F. WHY CHOOSE US
+        <!-- ==========================================================================
+         F. OUR COMMITMENT (EXACT REFERENCE DESIGN - 3D PHONE MOCKUP & JOURNEY)
          ========================================================================== -->
-    <section class="why-us-section" id="why-us">
-      <div class="container">
+    <section class="commitment-mockup-section" id="commitment" aria-label="Our Commitment to Reliable Sourcing">
+      <!-- Decorative Orbital Rings Background -->
+      <div class="mockup-orbital-glow" aria-hidden="true"></div>
+      <div class="mockup-orbital-ring-1" aria-hidden="true"></div>
+      <div class="mockup-orbital-ring-2" aria-hidden="true"></div>
 
-        <!-- Section Header -->
-        <div class="text-center mb-5 fade-up-element">
-          <span class="section-overline">Enterprise Strengths</span>
-          <h2 class="section-heading">Why Partner With GSR GLOBAL ENTERPRISES</h2>
-          <div class="divider-gold center"></div>
-          <p class="section-desc mx-auto">
-            We simplify complex industrial sourcing challenges by offering a single, trustworthy corporate interface
-            across diverse supply domains.
-          </p>
-        </div>
+      <div class="container position-relative z-1">
+        <div class="row align-items-center g-5">
 
-        <!-- Circular Process Infographic -->
-        <div class="why-infographic-container fade-up-element">
+          <!-- Left Column: Executive Narrative & Dual Action Buttons -->
+          <div class="col-lg-6 col-xl-7 fade-up-element">
+            <div class="commitment-mockup-content">
 
-          <!-- Left Column: 3 Callout Cards (Tapered arrow pointing right) -->
-          <div class="why-callouts-col why-callouts-left">
-
-            <!-- Card 1 (Top Left) -->
-            <div class="why-callout-card arrow-right">
-              <div class="why-callout-content">
-                <h3 class="why-callout-title">Multi-Sector Capabilities</h3>
-                <p class="why-callout-desc">Broad sourcing reach spanning healthcare, digital classroom infrastructure,
-                  heavy metals, transit spares, and renewable power.</p>
-              </div>
-            </div>
-
-            <!-- Card 2 (Middle Left) -->
-            <div class="why-callout-card arrow-right">
-              <div class="why-callout-content">
-                <h3 class="why-callout-title">Diverse Product Sourcing</h3>
-                <p class="why-callout-desc">Direct connections with certified OEM factories, foundries, and technology
-                  vendors capable of handling specialized procurement batches.</p>
-              </div>
-            </div>
-
-            <!-- Card 3 (Bottom Left) -->
-            <div class="why-callout-card arrow-right">
-              <div class="why-callout-content">
-                <h3 class="why-callout-title">Reliable Supply Solutions</h3>
-                <p class="why-callout-desc">Established regional transport and distribution logistics that ensure timely
-                  arrivals and dependable inventory delivery.</p>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- Center Focal: Circular Process Ring with Rotating Directional Flow & 6 Node Badges + Presenter Character -->
-          <div class="why-infographic-center">
-
-            <div class="why-circle-graphic-wrap">
-              <!-- Animated SVG Track & Circular Gradient Flow -->
-              <svg class="why-circle-svg" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true">
-                <!-- Concentric Guide Rings -->
-                <circle cx="250" cy="250" r="230" stroke="#e2e8f0" stroke-width="2" stroke-dasharray="6 6" />
-                <circle cx="250" cy="250" r="172" stroke="rgba(197, 160, 89, 0.22)" stroke-width="1.5" />
-
-                <!-- Left Arc Arrow (Cyan/Blue) -->
-                <path d="M 250 20 A 230 230 0 0 0 250 480" stroke="url(#arcGradientLeft)" stroke-width="7"
-                  stroke-linecap="round" />
-                <!-- Right Arc Arrow (Gold/Amber) -->
-                <path d="M 250 480 A 230 230 0 0 0 250 20" stroke="url(#arcGradientRight)" stroke-width="7"
-                  stroke-linecap="round" />
-
-                <!-- Circular Arrowheads -->
-                <polygon points="250,12 264,24 250,28" fill="#0284c7" />
-                <polygon points="250,488 236,476 250,472" fill="#d97706" />
-
-                <defs>
-                  <linearGradient id="arcGradientLeft" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stop-color="#0284c7" />
-                    <stop offset="100%" stop-color="#06b6d4" />
-                  </linearGradient>
-                  <linearGradient id="arcGradientRight" x1="0" y1="1" x2="0" y2="0">
-                    <stop offset="0%" stop-color="#f59e0b" />
-                    <stop offset="50%" stop-color="#c5a059" />
-                    <stop offset="100%" stop-color="#0b1b3d" />
-                  </linearGradient>
-                </defs>
-              </svg>
-
-              <!-- 6 Colored Circular Node Badges Aligned to the Callout Cards -->
-              <!-- Node 1: Top-Left (Blue) -->
-              <div class="why-node-badge node-top-left" style="--node-bg: #0284c7;" title="Multi-Sector Capabilities">
-                <i class="bi bi-crosshair"></i>
-              </div>
-              <!-- Node 2: Mid-Left (Cyan) -->
-              <div class="why-node-badge node-mid-left" style="--node-bg: #06b6d4;" title="Diverse Product Sourcing">
-                <i class="bi bi-box-seam-fill"></i>
-              </div>
-              <!-- Node 3: Bot-Left (Orange) -->
-              <div class="why-node-badge node-bot-left" style="--node-bg: #f97316;" title="Reliable Supply Solutions">
-                <i class="bi bi-truck"></i>
+              <!-- Eyebrow: Orange Dash + Bold White Text -->
+              <div class="commitment-mockup-eyebrow mb-3">
+                <span class="mockup-eyebrow-dash" aria-hidden="true"></span>
+                <span class="mockup-eyebrow-text">OUR COMMITMENT</span>
               </div>
 
-              <!-- Node 4: Top-Right (Yellow-Gold) -->
-              <div class="why-node-badge node-top-right" style="--node-bg: #eab308;" title="Customer-Oriented Service">
-                <i class="bi bi-people-fill"></i>
-              </div>
-              <!-- Node 5: Mid-Right (Amber-Gold) -->
-              <div class="why-node-badge node-mid-right" style="--node-bg: #f59e0b;" title="Quality-Focused Approach">
-                <i class="bi bi-shield-check"></i>
-              </div>
-              <!-- Node 6: Bot-Right (Coral-Red) -->
-              <div class="why-node-badge node-bot-right" style="--node-bg: #ef4444;" title="Professional Coordination">
-                <i class="bi bi-briefcase-fill"></i>
-              </div>
-
-              <!-- Center Executive Character Cutout -->
-              <div class="why-character-box">
-                <img src="assets/images/why-us-character.webp" alt="GSR Global Enterprises Business Executive"
-                  class="why-character-img" loading="lazy">
-                <div class="why-character-ground-shadow" aria-hidden="true"></div>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- Right Column: 3 Callout Cards (Tapered arrow pointing left) -->
-          <div class="why-callouts-col why-callouts-right">
-
-            <!-- Card 4 (Top Right) -->
-            <div class="why-callout-card arrow-left">
-              <div class="why-callout-content">
-                <h3 class="why-callout-title">Customer-Oriented Service</h3>
-                <p class="why-callout-desc">Tailored procurement strategies matched to the exact operational objectives
-                  and administrative schedules of each client organization.</p>
-              </div>
-            </div>
-
-            <!-- Card 5 (Middle Right) -->
-            <div class="why-callout-card arrow-left">
-              <div class="why-callout-content">
-                <h3 class="why-callout-title">Quality-Focused Approach</h3>
-                <p class="why-callout-desc">Uncompromising standard of material verification, compliance certification
-                  checks, and rigorous batch quality assurance.</p>
-              </div>
-            </div>
-
-            <!-- Card 6 (Bottom Right) -->
-            <div class="why-callout-card arrow-left">
-              <div class="why-callout-content">
-                <h3 class="why-callout-title">Professional Coordination</h3>
-                <p class="why-callout-desc">Clear communication, proactive milestone tracking, and seamless
-                  administrative support throughout the purchase order lifecycle.</p>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         FAQ SECTION: 2-COLUMN SPLIT ACCORDION (MATCHING REFERENCE DESIGN)
-         ========================================================================== -->
-    <section class="faq-section" id="faq">
-      <div class="container">
-        <div class="row g-4 g-lg-5 align-items-center">
-
-          <!-- Left Column: Overline, Title, Gold Divider & Specialist Image Card -->
-          <div class="col-lg-5">
-            <div class="faq-left-col">
-              <span class="section-overline">FAQ</span>
-              <h2 class="section-heading faq-heading">
-                Procurement questions<br>
-                <span class="faq-accent">answered clearly</span>
+              <!-- Main Heading with Highlighted "Count On" -->
+              <h2 class="commitment-mockup-title mb-4">
+                A Commitment<br>You Can <span class="text-orange">Count On</span>
               </h2>
-              <div class="divider-gold mb-4"></div>
-              <div class="faq-photo-card mt-3">
-                <img src="assets/images/faq-specialist.webp" alt="GSR Global Procurement Operations" class="faq-photo-img" loading="lazy">
-              </div>
+
+              <!-- Narrative Body Paragraphs (User Provided Content) -->
+              <p class="commitment-mockup-lead mb-3">
+                At <strong>GSR Global Enterprises</strong>, we believe successful procurement goes beyond sourcing products. It is about understanding business needs, coordinating the right resources and building relationships based on trust.
+              </p>
+
+              <p class="commitment-mockup-body mb-0">
+                Whether you require specialized medical devices, IT infrastructure for educational projects, industrial raw materials, automotive components or solar energy products, we are committed to supporting your procurement requirements with professionalism and dedication.
+              </p>
+
             </div>
           </div>
 
-          <!-- Right Column: Standalone Floating Accordion Cards -->
-          <div class="col-lg-7">
-            <div class="faq-accordion" id="faqAccordion">
+          <!-- Right Column: 3D Smartphone Mockup -->
+          <div class="col-lg-6 col-xl-5 fade-up-element">
+            <div class="mockup-device-wrapper">
 
-              <!-- Item 01 -->
-              <div class="faq-card">
-                <div class="faq-card-header" data-bs-toggle="collapse" data-bs-target="#faqCol1"
-                  aria-expanded="true" aria-controls="faqCol1" role="button">
-                  <span class="faq-card-q">What sectors and procurement categories does GSR Global Enterprises specialize in?</span>
-                  <i class="bi bi-chevron-down faq-card-icon"></i>
-                </div>
-                <div id="faqCol1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-                  <div class="faq-card-body">
-                    GSR Global Enterprises delivers end-to-end turnkey procurement across five primary verticals:
-                    Heavy Commercial Fleet &amp; APSRTC Automobile Spares, Biomedical Diagnostic &amp; Hospital Equipment,
-                    Smart School &amp; Digital Educational IT Infrastructure, Structural Steel &amp; Industrial Metals,
-                    and Commercial Solar Clean Energy systems.
-                  </div>
-                </div>
-              </div>
+              <!-- Smartphone Chassis -->
+              <div class="mockup-smartphone">
+                
+                <!-- Dynamic Island / Top Camera -->
+                <div class="smartphone-island"></div>
 
-              <!-- Item 02 -->
-              <div class="faq-card">
-                <div class="faq-card-header collapsed" data-bs-toggle="collapse" data-bs-target="#faqCol2"
-                  aria-expanded="false" aria-controls="faqCol2" role="button">
-                  <span class="faq-card-q">Is GSR Global Enterprises registered on the Government e-Marketplace (GeM)?</span>
-                  <i class="bi bi-chevron-down faq-card-icon"></i>
-                </div>
-                <div id="faqCol2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                  <div class="faq-card-body">
-                    Yes. We are fully registered and compliant with a verified GSTIN (37ABDFG9557A1ZC), actively
-                    supporting GeM tender bidding, state government procurement guidelines, and formal public-sector
-                    institutional purchase orders across Andhra Pradesh.
-                  </div>
-                </div>
-              </div>
+                <!-- Phone Screen Content -->
+                <div class="smartphone-screen">
 
-              <!-- Item 03 -->
-              <div class="faq-card">
-                <div class="faq-card-header collapsed" data-bs-toggle="collapse" data-bs-target="#faqCol3"
-                  aria-expanded="false" aria-controls="faqCol3" role="button">
-                  <span class="faq-card-q">What quality assurances and OEM warranties are provided with supplied components?</span>
-                  <i class="bi bi-chevron-down faq-card-icon"></i>
-                </div>
-                <div id="faqCol3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                  <div class="faq-card-body">
-                    All mechanical spares, medical devices, and IT hardware are directly sourced from certified
-                    OEM manufacturers adhering to ISO 9001, ISO 13485 (medical), and CE standards. Every shipment
-                    includes original batch test certificates, manufacturer warranties, and dedicated SLA
-                    replacement support.
+                  <!-- Header inside Phone -->
+                  <div class="screen-header text-center mb-3">
+                    <h3 class="screen-app-title mb-1">GSR Promise</h3>
+                    <span class="screen-app-subtitle">Your enquiry journey</span>
                   </div>
-                </div>
-              </div>
 
-              <!-- Item 04 -->
-              <div class="faq-card">
-                <div class="faq-card-header collapsed" data-bs-toggle="collapse" data-bs-target="#faqCol4"
-                  aria-expanded="false" aria-controls="faqCol4" role="button">
-                  <span class="faq-card-q">How does GSR Global Enterprises ensure on-time delivery across Andhra Pradesh?</span>
-                  <i class="bi bi-chevron-down faq-card-icon"></i>
-                </div>
-                <div id="faqCol4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                  <div class="faq-card-body">
-                    We maintain dedicated multi-sector warehousing facilities and regional dispatch logistics
-                    across Andhra Pradesh, enabling fast order processing, verified transit insurance, and guaranteed
-                    door-step delivery to government depots, hospitals, and educational facilities within agreed SLA timeframes.
+                  <!-- 4 Journey Step Cards -->
+                  <div class="screen-cards-stack">
+
+                    <!-- Step 1 Card -->
+                    <div class="journey-item-card">
+                      <div class="journey-card-icon navy">
+                        <i class="bi bi-check2"></i>
+                      </div>
+                      <div class="journey-card-info">
+                        <strong class="journey-info-title">Requirement understood</strong>
+                        <span class="journey-info-desc">Specifications confirmed</span>
+                      </div>
+                    </div>
+
+                    <!-- Step 2 Card -->
+                    <div class="journey-item-card">
+                      <div class="journey-card-icon navy">
+                        <i class="bi bi-check2"></i>
+                      </div>
+                      <div class="journey-card-info">
+                        <strong class="journey-info-title">Sourced with care</strong>
+                        <span class="journey-info-desc">Matched to your industry</span>
+                      </div>
+                    </div>
+
+                    <!-- Step 3 Card -->
+                    <div class="journey-item-card">
+                      <div class="journey-card-icon navy">
+                        <i class="bi bi-check2"></i>
+                      </div>
+                      <div class="journey-card-info">
+                        <strong class="journey-info-title">Updates shared</strong>
+                        <span class="journey-info-desc">Clear communication</span>
+                      </div>
+                    </div>
+
+                    <!-- Step 4 Card (Featured Orange Delivery Highlight) -->
+                    <div class="journey-item-card card-featured-orange">
+                      <div class="journey-card-icon white">
+                        <i class="bi bi-truck"></i>
+                      </div>
+                      <div class="journey-card-info">
+                        <strong class="journey-info-title">On the way to you</strong>
+                        <span class="journey-info-desc">Delivery planned</span>
+                      </div>
+                    </div>
+
                   </div>
+
+                  <!-- Bottom Enquiry Action Button inside Phone -->
+                  <div class="screen-bottom-action mt-3">
+                    <a href="#contact" class="btn-screen-action">
+                      <span>Start Your Enquiry</span>
+                    </a>
+                  </div>
+
                 </div>
+
               </div>
 
             </div>
@@ -1163,183 +873,163 @@
     </section>
 
 
-
     <!-- ==========================================================================
-         G. TESTIMONIALS: 3D COVER-FLOW CLIENT ENDORSEMENTS
+         G. CONTACT / REQUEST A QUOTE (PRIMARY CONVERSION DUAL-TONE SECTION)
          ========================================================================== -->
-    <section class="testimonials-section" id="testimonials">
+    <section class="contact-quote-section" id="contact" aria-label="Contact and Request a Procurement Quote">
       <div class="container">
 
-        <!-- Section Header (Heading & Subheading) -->
-        <div class="text-center mb-5 fade-up-element">
-          <span class="section-overline">Client Endorsements</span>
-          <h2 class="section-heading">Trusted by Industry Leaders &amp; Institutions</h2>
-          <div class="divider-gold center"></div>
-          <p class="section-desc mx-auto">
-            Read verified feedback from our public-sector partners, institutional procurement officers, and engineering
-            leads across Andhra Pradesh.
-          </p>
-        </div>
+        <!-- Dual-Tone Split Master Card -->
+        <div class="contact-quote-card fade-up-element">
+          <div class="row g-0 align-items-stretch">
 
-        <!-- 3D Cover-Flow Stage Container -->
-        <div class="coverflow-stage-wrapper fade-up-element" id="testimonialsCoverflow">
+            <!-- Left Side: Dark Navy Contact Information (approx 42% width) -->
+            <div class="col-lg-5 contact-dark-panel">
+              <div class="contact-dark-inner">
 
-          <div class="coverflow-stage" id="coverflowTrack">
-
-            <!-- Card 0: Heavy Commercial Transit Workshop (APSRTC Context) -->
-            <div class="coverflow-card" data-index="0">
-              <div class="coverflow-card-inner">
-                <div class="coverflow-stars" aria-label="5 out of 5 stars">
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
+                <!-- Eyebrow: Orange Dash + White Text -->
+                <div class="contact-panel-eyebrow mb-3">
+                  <span class="contact-panel-dash" aria-hidden="true"></span>
+                  <span class="contact-panel-tag">CONTACT US</span>
                 </div>
-                <h3 class="coverflow-quote-title">"Uncompromising precision and prompt delivery"</h3>
-                <p class="coverflow-quote-text">
-                  GSR Global Enterprises has proven to be an exceptionally reliable partner for heavy commercial bus
-                  spares and workshop maintenance components. Their adherence to exact mechanical tolerances and prompt
-                  dispatch make them our benchmark supplier.
+
+                <!-- Main Heading -->
+                <h2 class="contact-panel-title mb-3">
+                  Looking for a Reliable <span class="text-orange">Procurement Partner?</span>
+                </h2>
+
+                <!-- Lead Narrative -->
+                <p class="contact-panel-desc mb-4">
+                  Tell us what your business or project needs. Whether it's a single product requirement, bulk
+                  procurement or a large-scale institutional project, GSR Global Enterprises is ready to understand your
+                  requirements and explore the right sourcing solution.
                 </p>
-                <div class="coverflow-author-row">
-                  <div class="coverflow-avatar-initials" style="--avatar-color: #0284c7;">MS</div>
-                  <div>
-                    <h4 class="coverflow-author-name">M. Subrahmanyam</h4>
-                    <p class="coverflow-author-role">Zonal Workshop Fleet Maintenance &bull; Vizianagaram</p>
+
+                <!-- Contact Info List -->
+                <div class="contact-info-list">
+
+                  <!-- Business Email -->
+                  <div class="contact-info-item">
+                    <div class="contact-icon-circle">
+                      <i class="bi bi-envelope-fill"></i>
+                    </div>
+                    <div class="contact-info-details">
+                      <span class="contact-info-label">Business Email</span>
+                      <a href="mailto:gsrglobalenterprises@gmail.com" class="contact-info-link">
+                        gsrglobalenterprises@gmail.com
+                      </a>
+                    </div>
                   </div>
+
+                  <!-- Phone / WhatsApp -->
+                  <div class="contact-info-item">
+                    <div class="contact-icon-circle">
+                      <i class="bi bi-telephone-fill"></i>
+                    </div>
+                    <div class="contact-info-details">
+                      <span class="contact-info-label">Phone / WhatsApp</span>
+                      <a href="tel:+917989635764" class="contact-info-link">
+                        +91 7989635764
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- Office Address -->
+                  <div class="contact-info-item">
+                    <div class="contact-icon-circle">
+                      <i class="bi bi-geo-alt-fill"></i>
+                    </div>
+                    <div class="contact-info-details">
+                      <span class="contact-info-label">Office Address</span>
+                      <span class="contact-info-text">
+                        Visakhapatnam, Andhra Pradesh, India
+                      </span>
+                    </div>
+                  </div>
+
                 </div>
+
               </div>
             </div>
 
-            <!-- Card 1: Government Institutional Supply (Central Prison Context) -->
-            <div class="coverflow-card" data-index="1">
-              <div class="coverflow-card-inner">
-                <div class="coverflow-stars" aria-label="5 out of 5 stars">
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                </div>
-                <h3 class="coverflow-quote-title">"Absolute transparency and contract integrity"</h3>
-                <p class="coverflow-quote-text">
-                  Handling public-sector institutional procurement requires strict security protocol adherence and zero
-                  tolerance for delays. GSR Global Enterprises consistently met every contractual milestone with
-                  complete professionalism and verified material standards.
-                </p>
-                <div class="coverflow-author-row">
-                  <div class="coverflow-avatar-initials" style="--avatar-color: #f59e0b;">PO</div>
-                  <div>
-                    <h4 class="coverflow-author-name">P. Omprakash</h4>
-                    <p class="coverflow-author-role">Government Facilities &amp; Consignments &bull; Visakhapatnam</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <!-- Right Side: White Quote Request Form (approx 58% width) -->
+            <div class="col-lg-7 contact-form-panel">
+              <div class="contact-form-inner">
 
-            <!-- Card 2: Educational Infrastructure & School Transformation -->
-            <div class="coverflow-card" data-index="2">
-              <div class="coverflow-card-inner">
-                <div class="coverflow-stars" aria-label="5 out of 5 stars">
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                </div>
-                <h3 class="coverflow-quote-title">"Flawless IT equipment execution at scale"</h3>
-                <p class="coverflow-quote-text">
-                  The procurement and supply of student workstations, interactive flat panels, and online power
-                  infrastructure for school transformation programs was executed flawlessly. Deliveries were on
-                  schedule, fully compliant, and backed by robust OEM warranty coordination.
-                </p>
-                <div class="coverflow-author-row">
-                  <div class="coverflow-avatar-initials" style="--avatar-color: #10b981;">LC</div>
-                  <div>
-                    <h4 class="coverflow-author-name">L. Chaitanya Kumar</h4>
-                    <p class="coverflow-author-role">Project Infrastructure Coordinator &bull; Andhra Pradesh</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+                <h3 class="quote-form-heading">Request a Procurement Quote</h3>
+                <div class="quote-form-accent-line"></div>
 
-            <!-- Card 3: Healthcare Diagnostics & Medical Devices -->
-            <div class="coverflow-card" data-index="3">
-              <div class="coverflow-card-inner">
-                <div class="coverflow-stars" aria-label="5 out of 5 stars">
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                </div>
-                <h3 class="coverflow-quote-title">"Certified diagnostic precision and swift logistics"</h3>
-                <p class="coverflow-quote-text">
-                  Sourcing specialized clinical equipment and monitoring systems demands strict ISO and CE compliance.
-                  GSR Global Enterprises provided end-to-end documentation, factory-fresh calibration certificates, and
-                  coordinated seamless hospital delivery.
-                </p>
-                <div class="coverflow-author-row">
-                  <div class="coverflow-avatar-initials" style="--avatar-color: #8b5cf6;">SR</div>
-                  <div>
-                    <h4 class="coverflow-author-name">Dr. K. Sravani Rao</h4>
-                    <p class="coverflow-author-role">Healthcare Infrastructure Consultant &bull; Visakhapatnam</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+                <form id="procurementQuoteForm" class="quote-form" novalidate>
+                  <div class="row g-3">
 
-            <!-- Card 4: Renewable Solar Energy Installations -->
-            <div class="coverflow-card" data-index="4">
-              <div class="coverflow-card-inner">
-                <div class="coverflow-stars" aria-label="5 out of 5 stars">
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                </div>
-                <h3 class="coverflow-quote-title">"Tier-1 PV modules backed by verified testing"</h3>
-                <p class="coverflow-quote-text">
-                  Their procurement team secured tier-1 photovoltaic panels and high-capacity inverters for our rooftop
-                  solar installations across coastal AP. Every consignment arrived with rigorous pre-dispatch testing
-                  reports and intact transit protection.
-                </p>
-                <div class="coverflow-author-row">
-                  <div class="coverflow-avatar-initials" style="--avatar-color: #f97316;">VR</div>
-                  <div>
-                    <h4 class="coverflow-author-name">V. Ramakrishna</h4>
-                    <p class="coverflow-author-role">Sustainable Energy Project Lead &bull; Coastal AP</p>
+                    <!-- Full Name -->
+                    <div class="col-md-6">
+                      <label for="quoteFullName" class="quote-form-label">Full Name</label>
+                      <input type="text" class="form-control quote-form-control" id="quoteFullName" name="fullName"
+                        placeholder="Enter your full name" required>
+                    </div>
+
+                    <!-- Company / Organization -->
+                    <div class="col-md-6">
+                      <label for="quoteCompany" class="quote-form-label">Company / Organization</label>
+                      <input type="text" class="form-control quote-form-control" id="quoteCompany" name="company"
+                        placeholder="Enter company name" required>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="col-md-6">
+                      <label for="quoteEmail" class="quote-form-label">Email</label>
+                      <input type="email" class="form-control quote-form-control" id="quoteEmail" name="email"
+                        placeholder="name@company.com" required>
+                    </div>
+
+                    <!-- Contact Number -->
+                    <div class="col-md-6">
+                      <label for="quotePhone" class="quote-form-label">Contact Number</label>
+                      <input type="tel" class="form-control quote-form-control" id="quotePhone" name="phone"
+                        placeholder="Enter contact number" required>
+                    </div>
+
+                    <!-- Industry Dropdown -->
+                    <div class="col-12">
+                      <label for="quoteIndustry" class="quote-form-label">Industry</label>
+                      <select class="form-select quote-form-select" id="quoteIndustry" name="industry" required>
+                        <option value="" disabled selected>Select your industry</option>
+                        <option value="medical">Medical &amp; Healthcare Supplies</option>
+                        <option value="it">GCC &amp; IT Infrastructure</option>
+                        <option value="education">Government &amp; Education Projects</option>
+                        <option value="industrial">Industrial &amp; Manufacturing Supplies</option>
+                        <option value="automotive">Automobile &amp; Transportation Supplies</option>
+                        <option value="solar">Solar Energy Products</option>
+                        <option value="other">General / Other Sourcing</option>
+                      </select>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="col-12 mt-4">
+                      <button type="submit" class="btn-quote-submit" id="quoteSubmitBtn">
+                        <span>Submit Your Enquiry</span>
+                        <i class="bi bi-chevron-right ms-2"></i>
+                      </button>
+                    </div>
+
                   </div>
-                </div>
+
+                  <!-- Form Feedback Alert (Hidden by default) -->
+                  <div class="quote-form-alert d-none mt-3" id="quoteFormAlert">
+                    <div class="alert alert-success d-flex align-items-center gap-2 mb-0" role="alert">
+                      <i class="bi bi-check-circle-fill fs-5"></i>
+                      <span>Thank you! Your procurement enquiry has been received. Our team will contact you
+                        shortly.</span>
+                    </div>
+                  </div>
+
+                </form>
+
               </div>
             </div>
 
           </div>
-
-          <!-- Cover-Flow Navigation Bar: Prev Button, Pagination Dots, Next Button -->
-          <div class="coverflow-nav-dock">
-            <button class="coverflow-nav-btn" id="coverflowPrevBtn" type="button" aria-label="Previous Testimonial">
-              <i class="bi bi-chevron-left"></i>
-            </button>
-            <div class="coverflow-dots" id="coverflowDots" role="tablist" aria-label="Testimonial slides">
-              <button type="button" class="coverflow-dot active" data-index="0" aria-label="Testimonial 1"
-                aria-selected="true" role="tab"></button>
-              <button type="button" class="coverflow-dot" data-index="1" aria-label="Testimonial 2"
-                aria-selected="false" role="tab"></button>
-              <button type="button" class="coverflow-dot" data-index="2" aria-label="Testimonial 3"
-                aria-selected="false" role="tab"></button>
-              <button type="button" class="coverflow-dot" data-index="3" aria-label="Testimonial 4"
-                aria-selected="false" role="tab"></button>
-              <button type="button" class="coverflow-dot" data-index="4" aria-label="Testimonial 5"
-                aria-selected="false" role="tab"></button>
-            </div>
-            <button class="coverflow-nav-btn" id="coverflowNextBtn" type="button" aria-label="Next Testimonial">
-              <i class="bi bi-chevron-right"></i>
-            </button>
-          </div>
-
         </div>
 
       </div>
@@ -1348,109 +1038,73 @@
   </main>
 
   <!-- ==========================================================================
-       H. FOOTER
+       H. FOOTER (EXACT USER REFERENCE DESIGN)
        ========================================================================== -->
-  <footer class="footer-corporate" id="contact">
-    <div class="container">
-      <div class="row g-4 justify-content-between">
+  <footer class="footer-corporate" id="footer" aria-label="Corporate Footer">
+    <!-- Top Gold Border Line -->
+    <div class="footer-gold-line"></div>
 
-        <!-- Company Info -->
-        <div class="col-lg-4 col-md-6">
-          <a class="footer-brand d-inline-block mb-3" href="#hero" aria-label="GSR GLOBAL ENTERPRISES">
-            <img src="assets/images/gsr-logo-white.webp" alt="GSR GLOBAL ENTERPRISES - Delivering Procurement Excellence Across Industries"
-              class="footer-logo-img">
+    <!-- Main Navigation Bar Strip -->
+    <div class="footer-nav-strip">
+      <div class="container">
+        <div class="d-flex flex-column flex-lg-row align-items-center justify-content-between gap-3 py-3">
+
+          <!-- Brand Logo (Left) -->
+          <a class="footer-brand" href="#hero" aria-label="GSR GLOBAL ENTERPRISES">
+            <img src="assets/images/gsr-logo-official-white.webp" alt="GSR GLOBAL ENTERPRISES"
+              class="footer-brand-logo">
           </a>
-          <p class="footer-desc">
-            Premier multi-sector procurement, industrial supply, and turnkey infrastructure partner based in Andhra
-            Pradesh, delivering certified sourcing and verified contract execution.
-          </p>
-          <div class="footer-social-icons mt-3">
-            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer"
-              class="footer-social-btn btn-linkedin" aria-label="LinkedIn" title="LinkedIn">
+
+          <!-- Current Navbar Items (Center - Separated with Pipes) -->
+          <nav aria-label="Footer Navigation">
+            <ul class="footer-nav-links mb-0">
+              <li><a href="#hero">Home</a></li>
+              <li class="footer-nav-pipe" aria-hidden="true">|</li>
+              <li><a href="#about">About Us</a></li>
+              <li class="footer-nav-pipe" aria-hidden="true">|</li>
+              <li><a href="#services">Services</a></li>
+              <li class="footer-nav-pipe" aria-hidden="true">|</li>
+              <li><a href="#Industries">Industries</a></li>
+              <li class="footer-nav-pipe" aria-hidden="true">|</li>
+              <li><a href="#clients">Clients</a></li>
+              <li class="footer-nav-pipe" aria-hidden="true">|</li>
+              <li><a href="#contact">Contact Us</a></li>
+            </ul>
+          </nav>
+
+          <!-- Social Media Round White Badges (Right) -->
+          <div class="footer-social-group d-flex align-items-center gap-2">
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-social-circle"
+              aria-label="LinkedIn" title="LinkedIn">
               <i class="bi bi-linkedin"></i>
             </a>
-            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"
-              class="footer-social-btn btn-instagram" aria-label="Instagram" title="Instagram">
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="footer-social-circle"
+              aria-label="YouTube" title="YouTube">
+              <i class="bi bi-youtube"></i>
+            </a>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-circle"
+              aria-label="Instagram" title="Instagram">
               <i class="bi bi-instagram"></i>
             </a>
-            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"
-              class="footer-social-btn btn-facebook" aria-label="Facebook" title="Facebook">
-              <i class="bi bi-facebook"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Quick Links -->
-        <div class="col-lg-2 col-md-6 col-6">
-          <h4 class="footer-col-heading">Quick Links</h4>
-          <ul class="footer-links">
-            <li><a href="#hero"><i class="bi bi-chevron-right"></i> Home</a></li>
-            <li><a href="#about"><i class="bi bi-chevron-right"></i> About Us</a></li>
-            <li><a href="#services"><i class="bi bi-chevron-right"></i> Our Services</a></li>
-            <li><a href="#clients"><i class="bi bi-chevron-right"></i> Our Clients</a></li>
-            <li><a href="#why-us"><i class="bi bi-chevron-right"></i> Why Us</a></li>
-            <li><a href="#faq"><i class="bi bi-chevron-right"></i> FAQs</a></li>
-            <li><a href="#testimonials"><i class="bi bi-chevron-right"></i> Testimonials</a></li>
-          </ul>
-        </div>
-
-        <!-- Sourcing Categories -->
-        <div class="col-lg-2 col-md-6 col-6">
-          <h4 class="footer-col-heading">Procurement Scope</h4>
-          <ul class="footer-links">
-            <li><a href="#services"><i class="bi bi-chevron-right"></i> Medical Equipment</a></li>
-            <li><a href="#services"><i class="bi bi-chevron-right"></i> Computers &amp; IT</a></li>
-            <li><a href="#services"><i class="bi bi-chevron-right"></i> Iron, Steel &amp; Yarn</a></li>
-            <li><a href="#services"><i class="bi bi-chevron-right"></i> Bus &amp; Auto Spares</a></li>
-            <li><a href="#services"><i class="bi bi-chevron-right"></i> Solar PV Systems</a></li>
-          </ul>
-        </div>
-
-        <!-- Corporate Offices & Contact -->
-        <div class="col-lg-4 col-md-12">
-          <h4 class="footer-col-heading">Contact &amp; Offices</h4>
-
-          <!-- Direct Phone & Email Compact Pills -->
-          <div class="footer-contacts-strip mb-2">
-            <a href="tel:+917989635764" class="footer-compact-contact">
-              <i class="bi bi-telephone-fill"></i>
-              <span>+91 7989635764</span>
-            </a>
-            <a href="mailto:gsrglobalenterprises@gmail.com" class="footer-compact-contact">
-              <i class="bi bi-envelope-fill"></i>
-              <span>gsrglobalenterprises@gmail.com</span>
-            </a>
           </div>
 
-          <!-- Dual Office Compact Box -->
-          <div class="footer-compact-offices">
-            <div class="footer-office-item pb-2 mb-2 border-bottom border-secondary border-opacity-25">
-              <div class="d-flex align-items-center gap-1 mb-1">
-                <i class="bi bi-geo-alt-fill text-gold"></i>
-                <span class="office-name">Registered HQ:</span>
-              </div>
-              <div class="office-addr">#1-1, Near ZPH School, Patha Duppada, Vizianagaram – 535003, AP</div>
-            </div>
-            <div class="footer-office-item">
-              <div class="d-flex align-items-center gap-1 mb-1">
-                <i class="bi bi-building text-gold"></i>
-                <span class="office-name">Branch Office:</span>
-              </div>
-              <div class="office-addr">#303, Sri Sampath Res., Mithilapur Col., Madhurawada, Vizag – 530041, AP</div>
-            </div>
-          </div>
         </div>
-
       </div>
+    </div>
 
-      <!-- Bottom Bar -->
-      <div class="footer-bottom-bar d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
-        <div>
-          &copy; <span id="currentYear">2026</span> <strong>GSR GLOBAL ENTERPRISES</strong>. All Rights Reserved.
-        </div>
-        <div>
-          <span class="footer-gstin-badge"><i class="bi bi-shield-check text-warning me-1"></i> GSTIN:
-            37ABDFG9557A1ZC</span>
+    <!-- Middle Gold Divider Line -->
+    <div class="footer-gold-line"></div>
+
+    <!-- Bottom Copyright & Tagline Bar -->
+    <div class="footer-bottom-strip">
+      <div class="container">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 py-3">
+          <div class="footer-copyright-text">
+            &copy; 2026 GSR Global Enterprises. All Rights Reserved.
+          </div>
+          <div class="footer-tagline-text">
+            Designed by Sunseaz
+          </div>
         </div>
       </div>
     </div>
@@ -1497,6 +1151,8 @@
       </div>
     </div>
   </div>
+
+
 
   <!-- Back to Top Button -->
   <button type="button" class="back-to-top" id="backToTopBtn" aria-label="Back to Top">

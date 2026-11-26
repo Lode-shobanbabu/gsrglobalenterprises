@@ -40,19 +40,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 2. Mobile Nav auto-collapse on link click
-  const navLinks = document.querySelectorAll('.navbar-corporate .nav-link:not(.dropdown-toggle)');
-  const navbarCollapse = document.querySelector('.navbar-collapse');
+  // 2. Mobile Nav auto-close on link click (Side Offcanvas Drawer)
+  const navLinks = document.querySelectorAll('#navbarOffcanvas .nav-link, #navbarOffcanvas .header-cta-orange');
+  const offcanvasEl = document.getElementById('navbarOffcanvas');
   navLinks.forEach((link) => {
     link.addEventListener('click', () => {
-      if (navbarCollapse?.classList.contains('show')) {
-        // Trigger Bootstrap collapse if available
-        const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
-        if (bsCollapse) {
-          bsCollapse.hide();
-        } else {
-          navbarCollapse.classList.remove('show');
-        }
+      if (offcanvasEl?.classList.contains('show')) {
+        const bsOffcanvas = bootstrap.Offcanvas.getInstance(offcanvasEl) || new bootstrap.Offcanvas(offcanvasEl);
+        bsOffcanvas.hide();
       }
     });
   });
@@ -111,38 +106,66 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 5. Service Quick Details Data and Modal Integration
   const serviceDetailsData = {
-    'medical-equipment': {
-      title: 'Medical Equipment & Devices Procurement',
+    'medical': {
+      title: 'Medical & Healthcare Supplies',
       category: 'Procurement Sector 01',
-      description: 'Procurement and supply of medical equipment, healthcare devices, and related clinical requirements. We partner with ISO and CE compliant manufacturers to ensure precision, reliability, and regulatory safety for medical centers.',
+      description: 'Procurement and supply of hospital-grade medical equipment, clinical diagnostic devices, surgical instruments, sterilization systems, and certified clinical consumables. Compliant with ISO and CE standards.',
       items: [
         'Diagnostic & Patient Monitoring Systems',
         'Hospital Surgical Instruments & Equipment',
         'Clinical Laboratory Diagnostic Analyzers',
         'Healthcare Disposables & Sterilization Gear',
         'Emergency Care & ICU Support Hardware',
-        'Custom Institutional Medical Sourcing'
+        'Direct OEM Healthcare Sourcing'
       ],
       compliance: 'Strict adherence to medical-grade standards, manufacturer calibration records, and rapid institutional delivery.'
     },
-    'it-infrastructure': {
-      title: 'Computers & IT Infrastructure',
-      category: 'Procurement Sector 02',
-      description: 'Supply of computers, IT equipment, and digital infrastructure solutions specifically tailored for school transformation projects, academic institutions, and educational development programs.',
-      items: [
-        'Educational Desktop Workstations & Smart Laptops',
-        'Interactive Smart Boards & Digital Classroom Displays',
-        'Institutional Networking, Routers & Structured Cabling',
-        'UPS Power Backup & Secure Server Cabinets',
-        'Computer Lab Setup & Peripherals Supply',
-        'Multi-facility Hardware Deployment'
-      ],
-      compliance: 'OEM-backed warranty support, bulk configuration, and turn-key deployment for state and private educational setups.'
+    'medical-equipment': {
+      title: 'Medical & Healthcare Supplies',
+      category: 'Procurement Sector 01',
+      description: 'Procurement and supply of medical equipment, healthcare devices, and related clinical requirements.',
+      items: ['Diagnostic Systems', 'Surgical Instruments', 'Clinical Disposables'],
+      compliance: 'ISO/CE certified'
     },
-    'steel-yarn': {
-      title: 'Iron, Steel & Yarn Procurement',
+    'it': {
+      title: 'GCC & IT Infrastructure',
+      category: 'Procurement Sector 02',
+      description: 'Comprehensive computing, server hardware, cloud workstations, high-speed networking, and enterprise infrastructure tailored for Global Capability Centers and corporate enterprises.',
+      items: [
+        'Enterprise Servers & Data Center Racks',
+        'High-Performance Workstations & Smart Laptops',
+        'Managed Switches, Routers & Structured Cabling',
+        'Modular UPS Power & Secure Server Cabinets',
+        'GCC Command Center Systems & Displays',
+        'Multi-facility Enterprise IT Hardware Deployment'
+      ],
+      compliance: 'OEM-backed warranty support, bulk configuration, and turn-key deployment.'
+    },
+    'it-infrastructure': {
+      title: 'GCC & IT Infrastructure',
+      category: 'Procurement Sector 02',
+      description: 'Supply of enterprise servers and IT infrastructure.',
+      items: ['Enterprise Servers', 'Networking Hardware', 'Cloud Workstations'],
+      compliance: 'OEM-backed warranty'
+    },
+    'govt-education': {
+      title: 'Government & Education Projects',
       category: 'Procurement Sector 03',
-      description: 'Comprehensive procurement and supply of structural iron, TMT steel, and commercial yarn materials to satisfy demanding industrial, construction, and textile production requirements.',
+      description: 'Institutional procurement, school transformation programs, interactive digital classroom setups, and turnkey equipment deployments for state government initiatives.',
+      items: [
+        'Interactive Smart Boards & Digital Classroom Panels',
+        'Computer Labs & Educational Hardware Systems',
+        'Institutional Furniture & STEM Lab Equipment',
+        'Public Infrastructure Project Hardware',
+        'School Transformation & Turnkey Sourcing',
+        'State-Wide Bulk Logistics Coordination'
+      ],
+      compliance: 'Government tender specifications compliance, rigorous pre-dispatch testing, and on-site commissioning.'
+    },
+    'industrial': {
+      title: 'Industrial & Manufacturing Supplies',
+      category: 'Procurement Sector 04',
+      description: 'Certified structural TMT steel, heavy plates, industrial fabrication sections, raw materials, and commercial-grade textile yarn for production and manufacturing plants.',
       items: [
         'TMT Steel Bars (Fe 500 / 550 Grade Standards)',
         'Structural Steel Sections (Beams, Channels, Angles, Pipes)',
@@ -153,10 +176,17 @@ document.addEventListener('DOMContentLoaded', () => {
       ],
       compliance: 'Certified mill test reports (MTR), standard metallurgical tolerances, and transparent weight verification.'
     },
-    'automobile-parts': {
-      title: 'Automobile & Bus Spare Parts Procurement',
+    'steel-yarn': {
+      title: 'Industrial & Manufacturing Supplies',
       category: 'Procurement Sector 04',
-      description: 'Sourcing and procurement of automobile industry components and heavy-duty spare parts, with dedicated focus on commercial bus fleets, public transportation workshops, and transit vehicles.',
+      description: 'Structural steel and industrial supplies.',
+      items: ['TMT Steel', 'Industrial Sections', 'Commercial Yarn'],
+      compliance: 'MTR certified'
+    },
+    'auto': {
+      title: 'Automobile & Transportation Supplies',
+      category: 'Procurement Sector 05',
+      description: 'Sourcing and procurement of commercial transport vehicle spares, heavy bus assemblies, braking components, suspension units, and certified maintenance hardware for public transport workshops.',
       items: [
         'Commercial Bus Chassis & Suspension Components',
         'Heavy-Duty Braking Drums, Liners & Air Brake Valves',
@@ -165,21 +195,14 @@ document.addEventListener('DOMContentLoaded', () => {
         'Electrical Starters, Alternators & Fleet Lighting Systems',
         'OEM & Grade-A Aftermarket Maintenance Spares'
       ],
-      compliance: 'High endurance benchmarks, precision dimensional matching for commercial fleet durability and workshop compatibility.'
+      compliance: 'High endurance benchmarks, precision dimensional matching for commercial fleet durability.'
     },
-    'solar-procurement': {
-      title: 'Solar Panel Procurement',
+    'automobile-parts': {
+      title: 'Automobile & Transportation Supplies',
       category: 'Procurement Sector 05',
-      description: 'Procurement and supply of premium solar panels, photovoltaic modules, and allied solar energy balance-of-system equipment for commercial, industrial, and institutional setups.',
-      items: [
-        'Tier-1 Monocrystalline & Polycrystalline Solar PV Modules',
-        'Bifacial High-Efficiency Photovoltaic Arrays',
-        'Grid-Tied & Hybrid Solar Inverters',
-        'Galvanized Mounting Structures & Cable Connectors',
-        'Solar Water Pumping & Institutional Arrays',
-        'Comprehensive Component Procurement'
-      ],
-      compliance: 'MNRE / IEC approved certifications, verified wattage tolerances, and weather-resistant packaging.'
+      description: 'Fleet vehicle spares and transit components.',
+      items: ['Chassis Components', 'Braking Systems', 'Engine Parts'],
+      compliance: 'Fleet endurance certified'
     }
   };
 
@@ -275,42 +298,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 7. Services Section Carousel Controls
-  const servicesTrack = document.getElementById('servicesCarouselTrack');
-  const servicesPrevBtn = document.getElementById('servicesCarouselPrev');
-  const servicesNextBtn = document.getElementById('servicesCarouselNext');
-
-  if (servicesTrack && servicesPrevBtn && servicesNextBtn) {
-    const getScrollStep = () => {
-      const firstCard = servicesTrack.querySelector('.service-carousel-card');
-      return firstCard ? firstCard.getBoundingClientRect().width + 24 : 340;
-    };
-
-    servicesNextBtn.addEventListener('click', () => {
-      const maxScroll = servicesTrack.scrollWidth - servicesTrack.clientWidth;
-      if (servicesTrack.scrollLeft + 10 >= maxScroll) {
-        servicesTrack.scrollTo({ left: 0, behavior: 'smooth' }); // Loop back
-      } else {
-        servicesTrack.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
-      }
-    });
-
-    servicesPrevBtn.addEventListener('click', () => {
-      if (servicesTrack.scrollLeft <= 10) {
-        servicesTrack.scrollTo({ left: servicesTrack.scrollWidth, behavior: 'smooth' }); // Loop to end
-      } else {
-        servicesTrack.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
-      }
-    });
-  }
-
-  // 8. Service Card "Enroll Now" Action Handler
-  document.querySelectorAll('.btn-enroll-now').forEach((btn) => {
+  // 7. Service Card Enquire Action Handler
+  document.querySelectorAll('.btn-pro-enquire').forEach((btn) => {
     btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const serviceCard = btn.closest('.service-carousel-card');
-      const serviceTitle = serviceCard?.querySelector('.service-card-title')?.textContent?.trim() || 'Procurement Service';
-      directEnquiryEmail(serviceTitle);
+      const card = btn.closest('.service-pro-card');
+      const serviceTitle = card?.querySelector('.service-pro-title')?.textContent?.trim() || 'Procurement Service';
+      // Smooth scroll to contact and focus inquiry
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+      }
     });
   });
 
@@ -434,208 +431,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
   initHeroSlider();
 
-  // 10. 3D Cover-Flow Testimonials Carousel Engine
-  const initTestimonialsCoverflow = () => {
-    const stageWrapper = document.getElementById('testimonialsCoverflow');
-    const cards = document.querySelectorAll('.coverflow-card');
-    const dots = document.querySelectorAll('.coverflow-dot');
-    const prevBtn = document.getElementById('coverflowPrevBtn');
-    const nextBtn = document.getElementById('coverflowNextBtn');
 
-    if (!stageWrapper || cards.length === 0) return;
-
-    let currentIndex = 0;
-    const totalCards = cards.length;
-    const slideDuration = 5500;
-    let autoPlayTimer = null;
-
-    const updateCoverflow = () => {
-      const windowWidth = window.innerWidth;
-
-      // Determine responsive spacing steps
-      let step1 = 260;
-      let step2 = 450;
-      let zStep1 = -120;
-      let zStep2 = -240;
-      let scale1 = 0.86;
-      let scale2 = 0.74;
-
-      if (windowWidth < 1200 && windowWidth >= 992) {
-        step1 = 210;
-        step2 = 380;
-      } else if (windowWidth < 992 && windowWidth >= 768) {
-        step1 = 150;
-        step2 = 280;
-        scale1 = 0.84;
-        scale2 = 0.72;
-      } else if (windowWidth < 768) {
-        step1 = 65;
-        step2 = 120;
-        scale1 = 0.82;
-        scale2 = 0.7;
-        zStep1 = -60;
-        zStep2 = -120;
-      }
-
-      cards.forEach((card, i) => {
-        // Calculate shortest circular difference between i and currentIndex
-        let diff = (i - currentIndex + totalCards) % totalCards;
-        if (diff > totalCards / 2) {
-          diff = diff - totalCards;
-        }
-
-        if (diff === 0) {
-          // Active Center Card
-          card.style.transform = 'translateX(0) scale(1) translateZ(0)';
-          card.style.opacity = '1';
-          card.style.zIndex = '5';
-          card.style.filter = 'none';
-          card.classList.add('active');
-          card.setAttribute('aria-hidden', 'false');
-        } else if (diff === 1) {
-          // 1st Card to Right
-          card.style.transform = `translateX(${step1}px) scale(${scale1}) translateZ(${zStep1}px)`;
-          card.style.opacity = windowWidth < 768 ? '0.45' : '0.62';
-          card.style.zIndex = '4';
-          card.style.filter = 'brightness(0.92)';
-          card.classList.remove('active');
-          card.setAttribute('aria-hidden', 'true');
-        } else if (diff === -1) {
-          // 1st Card to Left
-          card.style.transform = `translateX(-${step1}px) scale(${scale1}) translateZ(${zStep1}px)`;
-          card.style.opacity = windowWidth < 768 ? '0.45' : '0.62';
-          card.style.zIndex = '4';
-          card.style.filter = 'brightness(0.92)';
-          card.classList.remove('active');
-          card.setAttribute('aria-hidden', 'true');
-        } else if (diff === 2) {
-          // 2nd Card to Right
-          card.style.transform = `translateX(${step2}px) scale(${scale2}) translateZ(${zStep2}px)`;
-          card.style.opacity = windowWidth < 768 ? '0.15' : '0.28';
-          card.style.zIndex = '3';
-          card.style.filter = 'brightness(0.8)';
-          card.classList.remove('active');
-          card.setAttribute('aria-hidden', 'true');
-        } else if (diff === -2) {
-          // 2nd Card to Left
-          card.style.transform = `translateX(-${step2}px) scale(${scale2}) translateZ(${zStep2}px)`;
-          card.style.opacity = windowWidth < 768 ? '0.15' : '0.28';
-          card.style.zIndex = '3';
-          card.style.filter = 'brightness(0.8)';
-          card.classList.remove('active');
-          card.setAttribute('aria-hidden', 'true');
-        } else {
-          // Cards further away
-          card.style.transform = `translateX(${diff > 0 ? step2 + 50 : -step2 - 50}px) scale(0.6) translateZ(-300px)`;
-          card.style.opacity = '0';
-          card.style.zIndex = '1';
-          card.classList.remove('active');
-          card.setAttribute('aria-hidden', 'true');
-        }
-      });
-
-      // Update dots
-      dots.forEach((dot, idx) => {
-        if (idx === currentIndex) {
-          dot.classList.add('active');
-          dot.setAttribute('aria-selected', 'true');
-        } else {
-          dot.classList.remove('active');
-          dot.setAttribute('aria-selected', 'false');
-        }
-      });
-    };
-
-    const goToCard = (index) => {
-      if (index >= totalCards) {
-        currentIndex = 0;
-      } else if (index < 0) {
-        currentIndex = totalCards - 1;
-      } else {
-        currentIndex = index;
-      }
-      updateCoverflow();
-    };
-
-    const nextCard = () => goToCard(currentIndex + 1);
-    const prevCard = () => goToCard(currentIndex - 1);
-
-    const startAutoPlay = () => {
-      stopAutoPlay();
-      autoPlayTimer = setInterval(nextCard, slideDuration);
-    };
-
-    const stopAutoPlay = () => {
-      if (autoPlayTimer) {
-        clearInterval(autoPlayTimer);
-        autoPlayTimer = null;
-      }
-    };
-
-    // Card click directly navigates to that card
-    cards.forEach((card, idx) => {
-      card.addEventListener('click', () => {
-        goToCard(idx);
-        startAutoPlay();
-      });
-    });
-
-    // Arrow navigation
-    prevBtn?.addEventListener('click', (e) => {
+  // 8. Procurement Quote Form Interactive Submission
+  const quoteForm = document.getElementById('procurementQuoteForm');
+  const quoteAlert = document.getElementById('quoteFormAlert');
+  if (quoteForm) {
+    quoteForm.addEventListener('submit', function (e) {
       e.preventDefault();
-      prevCard();
-      startAutoPlay();
-    });
-
-    nextBtn?.addEventListener('click', (e) => {
-      e.preventDefault();
-      nextCard();
-      startAutoPlay();
-    });
-
-    // Dot indicators
-    dots.forEach((dot, idx) => {
-      dot.addEventListener('click', (e) => {
-        e.preventDefault();
-        goToCard(idx);
-        startAutoPlay();
-      });
-    });
-
-    // Pause on hover
-    stageWrapper.addEventListener('mouseenter', stopAutoPlay);
-    stageWrapper.addEventListener('mouseleave', startAutoPlay);
-
-    // Touch Swipe handling
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    stageWrapper.addEventListener('touchstart', (e) => {
-      touchStartX = e.changedTouches[0].screenX;
-    }, { passive: true });
-
-    stageWrapper.addEventListener('touchend', (e) => {
-      touchEndX = e.changedTouches[0].screenX;
-      if (touchStartX - touchEndX > 50) {
-        nextCard();
-        startAutoPlay();
-      } else if (touchEndX - touchStartX > 50) {
-        prevCard();
-        startAutoPlay();
+      if (!quoteForm.checkValidity()) {
+        e.stopPropagation();
+        quoteForm.classList.add('was-validated');
+        return;
       }
-    }, { passive: true });
-
-    // Responsive update on resize
-    let resizeTimer = null;
-    window.addEventListener('resize', () => {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(updateCoverflow, 100);
-    }, { passive: true });
-
-    // Initialize
-    updateCoverflow();
-    startAutoPlay();
-  };
-
-  initTestimonialsCoverflow();
+      const submitBtn = document.getElementById('quoteSubmitBtn');
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span>Submitting...</span>';
+      }
+      setTimeout(function () {
+        if (quoteAlert) {
+          quoteAlert.classList.remove('d-none');
+        }
+        quoteForm.reset();
+        quoteForm.classList.remove('was-validated');
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<span>Submit Your Enquiry</span><i class="bi bi-chevron-right ms-2"></i>';
+        }
+      }, 700);
+    });
+  }
 });
