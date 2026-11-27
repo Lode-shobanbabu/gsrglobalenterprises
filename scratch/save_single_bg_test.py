@@ -1,0 +1,148 @@
+test_single_bg_html = '''<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Single Image Background Banner Test</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+    :root {
+      --primary-navy: #062b55;
+      --accent-orange: #ff7900;
+      --font-heading: 'Poppins', sans-serif;
+      --font-body: 'Roboto', sans-serif;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f8fafc;
+      font-family: var(--font-body);
+    }
+    .commitment-section {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      background-color: #125197;
+      min-height: 340px;
+      display: flex;
+      align-items: center;
+    }
+    .commitment-single-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+    .commitment-single-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center right;
+      display: block;
+    }
+    .commitment-gradient-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(100deg, rgba(20, 88, 168, 0.92) 0%, rgba(28, 110, 198, 0.86) 45%, rgba(24, 98, 182, 0.58) 68%, rgba(18, 80, 155, 0.15) 85%, transparent 100%);
+      z-index: 2;
+    }
+    .commitment-content-wrap {
+      position: relative;
+      z-index: 3;
+      padding: 3.5rem 3.5rem 3.5rem max(2rem, calc((100vw - 1280px) / 2 + 1rem));
+      max-width: 820px;
+    }
+    .commitment-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .commitment-eyebrow-dash {
+      width: 24px;
+      height: 3px;
+      background-color: var(--accent-orange);
+      border-radius: 2px;
+      display: inline-block;
+    }
+    .commitment-eyebrow-text {
+      font-family: var(--font-heading);
+      font-size: 0.80rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #ffffff;
+    }
+    .commitment-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 3vw, 2.75rem);
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+    .commitment-text {
+      font-family: var(--font-body);
+      font-size: 0.98rem;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.95);
+      line-height: 1.62;
+    }
+    .commitment-promise-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(6, 43, 85, 0.70);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 50px;
+      padding: 0.55rem 1.25rem;
+      color: #ffffff;
+      font-size: 0.92rem;
+      margin-top: 0.5rem;
+    }
+    .commitment-promise-pill strong {
+      color: var(--accent-orange);
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+  </style>
+</head>
+<body>
+  <section class="commitment-section" id="commitment" aria-label="Our Commitment">
+    <div class="commitment-single-bg">
+      <img src="assets/images/hero-logistics-global.webp" alt="Global Supply Chain">
+    </div>
+    <div class="commitment-gradient-overlay"></div>
+    <div class="commitment-content-wrap">
+      <div class="commitment-eyebrow mb-2">
+        <span class="commitment-eyebrow-dash"></span>
+        <span class="commitment-eyebrow-text">OUR COMMITMENT</span>
+      </div>
+      <h2 class="commitment-title mb-3">Our Commitment</h2>
+      <p class="commitment-text mb-2">
+        At <strong>GSR Global Enterprises</strong>, we believe successful procurement goes beyond sourcing products. It is about understanding business needs, coordinating the right resources and building relationships based on trust.
+      </p>
+      <p class="commitment-text mb-3">
+        Whether you require specialized medical devices, IT infrastructure for educational projects, industrial raw materials, automotive components or solar energy products, we are committed to supporting your procurement requirements with professionalism and dedication.
+      </p>
+      <div class="commitment-promise-pill">
+        <i class="bi bi-shield-fill-check text-warning"></i>
+        <strong>Our Promise:</strong>
+        <span>Your Requirements. Our Commitment. Reliable Supply Solutions.</span>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
+'''
+
+with open('scratch/test_single_bg.html', 'w', encoding='utf-8') as f:
+    f.write(test_single_bg_html)
+print("Saved scratch/test_single_bg.html")

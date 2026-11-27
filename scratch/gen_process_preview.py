@@ -1,0 +1,293 @@
+html_preview = '''<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Procurement Process Test</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+    :root {
+      --primary-navy: #062b55;
+      --accent-orange: #ff7900;
+      --text-grey: #555b63;
+      --font-heading: 'Poppins', sans-serif;
+      --font-body: 'Roboto', sans-serif;
+    }
+    body {
+      background: #f1f5f9;
+      font-family: var(--font-body);
+      margin: 0;
+      padding: 3rem 1rem;
+    }
+    .procurement-process-section {
+      padding: 4.8rem 0 5.2rem;
+      background-color: #ffffff;
+      border-bottom: 1px solid rgba(6, 43, 85, 0.06);
+    }
+    .process-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .process-eyebrow-dash {
+      width: 24px;
+      height: 3px;
+      background-color: var(--accent-orange);
+      border-radius: 2px;
+      display: inline-block;
+    }
+    .process-eyebrow-text {
+      font-family: var(--font-heading);
+      font-size: 0.80rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent-orange);
+    }
+    .process-section-title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.85rem, 2.6vw, 2.35rem);
+      font-weight: 700;
+      color: var(--primary-navy);
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      max-width: 820px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .process-title-accent {
+      width: 40px;
+      height: 3px;
+      background-color: var(--accent-orange);
+      border-radius: 2px;
+    }
+    .process-section-subtitle {
+      font-family: var(--font-body);
+      font-size: 0.98rem;
+      font-weight: 400;
+      color: var(--text-grey);
+      line-height: 1.6;
+      max-width: 680px;
+    }
+    /* Timeline Container */
+    .process-timeline-container {
+      position: relative;
+      max-width: 960px;
+      margin: 3.5rem auto 0;
+    }
+    .process-timeline-spine {
+      position: absolute;
+      top: 25px;
+      bottom: 25px;
+      left: 50%;
+      width: 2px;
+      background-color: #cbd5e1;
+      transform: translateX(-50%);
+      z-index: 1;
+    }
+    .process-timeline-row {
+      position: relative;
+      margin-bottom: 2.75rem;
+    }
+    .process-timeline-row:last-child {
+      margin-bottom: 0;
+    }
+    .process-node-wrap {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .process-circle-badge {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--primary-navy);
+      border: 2px solid var(--accent-orange);
+      box-shadow: 0 0 0 5px #ffffff, 0 4px 14px rgba(6, 43, 85, 0.16);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.35s ease;
+    }
+    .process-timeline-row:hover .process-circle-badge {
+      transform: scale(1.12);
+      box-shadow: 0 0 0 5px #ffffff, 0 8px 22px rgba(255, 121, 0, 0.35);
+    }
+    .process-node-num {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+    .process-col-left {
+      padding-right: 3.25rem;
+    }
+    .process-col-right {
+      padding-left: 3.25rem;
+    }
+    /* Process Card */
+    .process-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-top: 3px solid var(--primary-navy);
+      border-radius: 12px;
+      padding: 1.65rem 1.85rem;
+      box-shadow: 0 4px 18px rgba(6, 43, 85, 0.04), 0 1px 3px rgba(6, 43, 85, 0.02);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+    .process-card:hover {
+      transform: translateY(-4px);
+      border-top-color: var(--accent-orange);
+      border-color: rgba(255, 121, 0, 0.35);
+      background: #ffffff;
+      box-shadow: 0 12px 30px rgba(6, 43, 85, 0.08), 0 2px 6px rgba(6, 43, 85, 0.03);
+    }
+    .process-card-title {
+      font-family: var(--font-heading);
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      line-height: 1.32;
+      margin-bottom: 0.55rem;
+      transition: color 0.25s ease;
+    }
+    .process-card:hover .process-card-title {
+      color: var(--accent-orange);
+    }
+    .process-card-desc {
+      font-family: var(--font-body);
+      font-size: 0.98rem;
+      font-weight: 400;
+      color: var(--text-grey);
+      line-height: 1.58;
+    }
+    @media (max-width: 991.98px) {
+      .process-timeline-spine {
+        left: 28px;
+        transform: none;
+      }
+      .process-node-wrap {
+        left: 28px;
+        transform: translate(-50%, -50%);
+      }
+      .process-col-left,
+      .process-col-right {
+        padding: 0 0 0 62px;
+        width: 100%;
+      }
+      .process-timeline-row {
+        margin-bottom: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="procurement-process-section" id="process">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="process-eyebrow mb-2">
+          <span class="process-eyebrow-dash"></span>
+          <span class="process-eyebrow-text">HOW WE WORK</span>
+          <span class="process-eyebrow-dash"></span>
+        </div>
+        <h2 class="process-section-title mb-3">
+          A Straightforward Approach to Reliable Procurement
+        </h2>
+        <div class="process-title-accent mx-auto mb-3"></div>
+        <p class="process-section-subtitle mx-auto">
+          We make the procurement process easier through structured coordination and a clear understanding of your requirements.
+        </p>
+      </div>
+
+      <div class="process-timeline-container">
+        <div class="process-timeline-spine"></div>
+
+        <!-- 01 -->
+        <div class="process-timeline-row row align-items-center">
+          <div class="col-lg-6 process-col-left">
+            <div class="process-card">
+              <h3 class="process-card-title">Understand Your Requirements</h3>
+              <p class="process-card-desc mb-0">
+                We understand your product specifications, quantities, budget expectations and project needs.
+              </p>
+            </div>
+          </div>
+          <div class="process-node-wrap">
+            <div class="process-circle-badge">
+              <span class="process-node-num">01</span>
+            </div>
+          </div>
+          <div class="col-lg-6 process-col-spacer d-none d-lg-block"></div>
+        </div>
+
+        <!-- 02 -->
+        <div class="process-timeline-row row align-items-center">
+          <div class="col-lg-6 process-col-spacer d-none d-lg-block"></div>
+          <div class="process-node-wrap">
+            <div class="process-circle-badge">
+              <span class="process-node-num">02</span>
+            </div>
+          </div>
+          <div class="col-lg-6 process-col-right">
+            <div class="process-card">
+              <h3 class="process-card-title">Source the Right Products</h3>
+              <p class="process-card-desc mb-0">
+                We coordinate sourcing based on your technical, commercial and quality requirements.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 03 -->
+        <div class="process-timeline-row row align-items-center">
+          <div class="col-lg-6 process-col-left">
+            <div class="process-card">
+              <h3 class="process-card-title">Coordinate Procurement</h3>
+              <p class="process-card-desc mb-0">
+                We coordinate quotations, product details, availability and procurement arrangements.
+              </p>
+            </div>
+          </div>
+          <div class="process-node-wrap">
+            <div class="process-circle-badge">
+              <span class="process-node-num">03</span>
+            </div>
+          </div>
+          <div class="col-lg-6 process-col-spacer d-none d-lg-block"></div>
+        </div>
+
+        <!-- 04 -->
+        <div class="process-timeline-row row align-items-center">
+          <div class="col-lg-6 process-col-spacer d-none d-lg-block"></div>
+          <div class="process-node-wrap">
+            <div class="process-circle-badge">
+              <span class="process-node-num">04</span>
+            </div>
+          </div>
+          <div class="col-lg-6 process-col-right">
+            <div class="process-card">
+              <h3 class="process-card-title">Support Supply & Delivery</h3>
+              <p class="process-card-desc mb-0">
+                We coordinate supply arrangements to support your purchasing and project timelines.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</body>
+</html>
+'''
+
+with open('scratch/test_process_preview.html', 'w', encoding='utf-8') as f:
+    f.write(html_preview)
+print("Saved scratch/test_process_preview.html")
