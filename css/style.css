@@ -3266,7 +3266,8 @@ a.contact-info-val:hover {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background-color: var(--primary-navy, #062b55);
+  /* background-color: var(--primary-navy, #062b55); */
+  background-color: #ff7900;
   color: #ffffff;
   display: flex;
   align-items: center;
