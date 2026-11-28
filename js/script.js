@@ -8,16 +8,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 1. Navigation Scroll Effect
   const navbar = document.querySelector('.navbar-corporate');
+  const header = document.querySelector('header.sticky-top') || document.querySelector('header');
   const backToTopBtn = document.getElementById('backToTopBtn');
 
   const handleScroll = () => {
     const scrollY = window.scrollY || window.pageYOffset;
 
-    // Navbar solid state on scroll
-    if (scrollY > 50) {
+    // Navbar solid / elevated state on scroll
+    if (scrollY > 30) {
       navbar?.classList.add('scrolled');
+      header?.classList.add('header-scrolled');
     } else {
       navbar?.classList.remove('scrolled');
+      header?.classList.remove('header-scrolled');
     }
 
     // Back to top visibility
@@ -53,28 +56,14 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // 3. ScrollSpy / Active Link Highlighting
-  const sections = document.querySelectorAll('section[id], footer[id]');
-  const observeActiveSection = () => {
-    const scrollPosition = (window.scrollY || window.pageYOffset) + 160;
-
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-      const sectionId = section.getAttribute('id');
-
-      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-        navLinks.forEach((link) => {
-          if (link.getAttribute('href') === `#${sectionId}`) {
-            link.classList.add('active');
-          } else {
-            link.classList.remove('active');
-          }
-        });
-      }
+  // Bootstrap's ScrollSpy on <body> already tracks sections and manages active link states cleanly
+  if (typeof bootstrap !== 'undefined' && bootstrap.ScrollSpy) {
+    const scrollSpyInstance = bootstrap.ScrollSpy.getInstance(document.body) || new bootstrap.ScrollSpy(document.body, {
+      target: '#mainNavbar',
+      offset: 100
     });
-  };
-
-  window.addEventListener('scroll', observeActiveSection, { passive: true });
+    scrollSpyInstance?.refresh();
+  }
 
   // 4. Subtle Section Reveal using IntersectionObserver
   if ('IntersectionObserver' in window) {
